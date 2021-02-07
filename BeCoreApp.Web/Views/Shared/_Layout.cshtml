@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="~/client-side/salanests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/animate.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/flaticon.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/style.css">
+    <link rel="stylesheet" href="~/client-side/salanests/css/responsive.css">
+    <link href="/admin-side/dashlot-admin/HTML/assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet">
+    <link href="/admin-side/dashlot-admin/HTML/assets/plugins/notify/css/jquery.growl.css" rel="stylesheet">
+    @*<link rel="icon" type="image/png" href="~/client-side/salanests/img/favicon.jpg">*@
+    <title>TaigaCapitalLtd - The cryptocurrency of the future</title>
+</head>
+<body class="home-two-body" data-spy="scroll" data-offset="70">
+    <div class="preloader">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Header")
+
+    @await Html.PartialAsync("_RightSideBar")
+
+    @RenderBody()
+
+    @await Html.PartialAsync("_Footer")
+
+    <script data-cfasync="false" src="~/client-side/salanests/js/email-decode.min.js"></script>
+    <script src="~/client-side/salanests/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="~/client-side/salanests/js/popper.min.js"></script>
+    <script src="~/client-side/salanests/js/bootstrap.min.js"></script>
+    <script src="~/client-side/salanests/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/client-side/salanests/js/owl.carousel.min.js"></script>
+    <script src="~/client-side/salanests/js/hammer.js"></script>
+    <script src="~/client-side/salanests/js/wow.min.js"></script>
+    <script src="~/client-side/salanests/js/form-validator.min.js"></script>
+    <script src="~/client-side/salanests/js/contact-form-script.js"></script>
+    <script src="~/client-side/salanests/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/client-side/salanests/js/custom.js"></script>
+
+    <!-- Notifications js -->
+    <script src="~/admin-side/dashlot-admin/HTML/assets/plugins/sweet-alert/sweetalert.min.js"></script>
+    <script src="~/admin-side/dashlot-admin/HTML/assets/plugins/notify/js/rainbow.js"></script>
+    <script src="~/admin-side/dashlot-admin/HTML/assets/plugins/notify/js/jquery.growl.js"></script>
+    <script src="~/client-app/shared/be.js"></script>
+    <script src="~/client-app/controllers/feedback/index.js"></script>
+    <script>
+        var feedbackObj=new FeedbackController;
+        feedbackObj.initialize()
+    </script>
+</body>
+</html>

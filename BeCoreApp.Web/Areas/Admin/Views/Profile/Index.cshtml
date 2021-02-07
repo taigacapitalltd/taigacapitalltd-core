@@ -1,0 +1,193 @@
+﻿@model AppUserViewModel
+@{
+    ViewData["Title"] = "Hồ Sơ";
+    List<ReferralGroupViewModel> referralGroups = ViewBag.ReferralGroups as List<ReferralGroupViewModel>;
+}
+
+@section Scripts{
+    <script src="~/admin-app/controllers/account/my-profile.js" asp-append-version="true"></script>
+    <script>
+        var myProfileObj = new MyProfileController();
+        myProfileObj.initialize();
+    </script>
+}
+
+@section Styles{
+    <link href="~/admin-app/controllers/account/my-profile.css" rel="stylesheet" asp-append-version="true" />
+    <style>
+        @@media (min-width: 768px) {
+            .title-referral {
+                min-width: 550px;
+            }
+        }
+    </style>
+}
+
+<div class="app-content icon-content">
+    <div class="section">
+        <!-- Page-header opened -->
+        <div class="page-header">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="ti-package mr-1"></i> Trang Chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+            </ol>
+            <div class="mt-3 mt-lg-0">
+                <div class="d-flex align-items-center flex-wrap text-nowrap">
+                    <button type="button" class="btn btn-success btn-icon-text mr-2 mb-2 mb-md-0"><i class="fe fe-download"></i>Import</button>
+                    <button type="button" class="btn btn-secondary btn-icon-text mr-2 mb-2 mb-md-0"><i class="fe fe-printer"></i>Print</button>
+                    <button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0"><i class="fe fe-download-cloud "></i>Download</button>
+                </div>
+            </div>
+        </div>
+        <!-- Page-header closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Thông Tin Hồ Sơ</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form style="width:100%">
+                            @Html.AntiForgeryToken()
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Họ Tên</label>
+                                        <input type="text" class="form-control" id="txtFullName" value="@Model.FullName">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Nhà Tài Trợ</label>
+                                        <input type="text" class="form-control" readonly value="@Model.Referal">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Tài Khoản</label>
+                                        <input type="text" class="form-control" readonly value="@Model.UserName">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">ID</label>
+                                        <input type="text" class="form-control" readonly value="@Model.ID">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Số Điện Thoại</label>
+                                        <input type="text" class="form-control" id="txtPhoneNumber" value="@Model.PhoneNumber">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="text" class="form-control" readonly value="@Model.Email">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">CMND</label>
+                                        <input type="text" class="form-control" id="txtCMND" value="@Model.CMND">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Link Liên Kết</label>
+                                        <input type="text" class="form-control" readonly value="@Model.ReferalLink">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <div class="form-group">
+                                        <label class="form-label">Địa Chỉ Ví Ether</label>
+                                        <input type="text" class="form-control" readonly value="@Model.WithdrawPublishKey">
+                                    </div>
+                                </div>
+                            </div>
+
+                            @if (Model.IsUpdatedKYC != true)
+                            {
+                                <div class="form-footer mt-2 text-center">
+                                    <a href="#" class="btn btn-success" id="btnMyProfile"
+                                       style="background: #b1897c !important;border: 1px solid #d6aa9b !important;box-shadow:none !important;">
+                                        Cập Nhật
+                                    </a>
+                                </div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Quản Lý Liên Kết</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var referralGroup in referralGroups)
+                        {
+                            if (referralGroup.Referrals.Count() > 0)
+                            {
+                                <span class="badge badge-secondary-light fs-18 mt-5 mb-4">@referralGroup.Name</span>
+                                @foreach (var item in referralGroup.Referrals)
+                                {
+                                    <div class="card p-3" style="box-shadow: 0px 0px 10px #ece8e6 !important;">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-xl-12 col-md-12 text-center">
+                                                    <form>
+                                                        @Html.AntiForgeryToken()
+                                                        <div class="sub-newsletter ">
+                                                            <h3 class="mb-2 title-referral" style="color: #b08374 !important;"><i class="pe-7s-share mr-2"></i> @item.BlogName</h3>
+                                                            <p class="mb-0 font-weight-semibold">Liên kết mẫu: <span class="text-primary fs-14">@item.ReferralLinkRule</span></p>
+                                                            <div class="input-group sub-input mt-3">
+                                                                <input type="text" class="form-control input-md txt-referral-link-@item.BlogId" value="@item.ReferralLink" placeholder="Nhập liên kết của bạn...">
+                                                            </div>
+                                                            <div class="input-group sub-input mt-2">
+                                                                <textarea class="form-control txtarea-referral-description-@item.BlogId" placeholder="Không bắt buộc: ghi chú">@item.Description</textarea>
+                                                            </div>
+                                                            <button type="button" class="btn btn-dark mt-3 br-tr-7 br-br-7 btn-update-referral" data-blog-id="@item.BlogId">
+                                                                <i class="fa fa-check"></i> Cập Nhật
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

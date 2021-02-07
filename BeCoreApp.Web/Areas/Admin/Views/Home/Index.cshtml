@@ -1,0 +1,967 @@
+﻿@model BeCoreApp.Application.ViewModels.System.NotifyViewModel
+@{
+    ViewData["Title"] = "Tổng Quan";
+}
+@section Scripts{
+    <!-- Index js-->
+}
+
+@section Styles{
+}
+
+<div class="app-content icon-content">
+    <div class="section">
+
+        <!-- Page-header opened -->
+        <div class="page-header">
+            <div class="page-leftheader">
+                <h4 class="page-title mb-0">Hi, welcome back!</h4>
+                <small class="text-muted mt-0">Crypto-currencies dashboard template.</small>
+            </div>
+            <div class="page-rightheader">
+                <div class="ml-5 ml-auto mt-3 mt-xl-0 d-flex">
+                    <button class="btn btn-primary mr-3">BTC</button>
+                    <button class="btn btn-white mr-3">ETH</button>
+                    <button class="btn btn-white mr-3">LTC</button>
+                    <button class="btn btn-white mr-3">XRP</button>
+                </div>
+            </div>
+        </div>
+        <!-- Page-header closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-lg-12">
+                <div class="card bg-dark1">
+                    <div class="js-conveyor-example">
+                        <ul class="news-crypto">
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Bitcoin.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">BTC / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$0.0215<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Waves.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">ADA / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$425.25<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>+12.85%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Dash.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">USD / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$2.786<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-02.25%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/EOS.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">EOS / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$15.425<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ethereum.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">ETH / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$5.125<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-11.85%%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Euro.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">EUR / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$135.425<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Decred.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">ETH / USDT</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$34.625<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-0.32%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/IOTA.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">IOTA / USD</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$67.325<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/litecoin.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">LTC / USD</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$7.525<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-1.42%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/monero.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">XMR / EUR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$4.325<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/NEM.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">ETH / USDT</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$5.525<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-1.32%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Neo.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">NEO / USD</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$6.025<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Augur.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">REP / USD</p>
+                                                <div class="h5 m-0 fs-14 text-warning">0.0215<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-0.45%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/raiblocks.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">XRB / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$0.125<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ripple.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">XRB / USDT</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$131.89<span class="text-danger ml-2"><i class="ion-arrow-down-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/stellar.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">XLM / INR</p>
+                                                <div class="h5 m-0 fs-14 text-warning">0.0215<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-0.78%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/tron.svg" class="w-5 h-6 mt-1" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">TRX / USD</p>
+                                                <div class="h5 m-0 fs-14 text-warning">$1.125<span class="text-success ml-2"><i class="ion-arrow-up-c mr-1"></i>-0.65%</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden">
+                    <div class="card-body pb-0 d-flex">
+                        <div>
+                            <h6 class="fs-13 mb-2 text-primary"><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Bitcoin.svg " class="w-4 h-4 mr-2" alt="img">BTC / USD</h6>
+                            <h3 class="mb-0">$8,459</h3>
+                        </div>
+                        <div class="ml-auto text-right">
+                            <h6 class=" mb-3 text-danger">$0.04</h6>
+                            <p class=" mb-0 text-success"><span class="text-muted">Vol:</span>(-1.33%)</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper ">
+                        <canvas id="cryptoChart" class="chart-dropshadow-primary cryptoChart overflow-hidden"></canvas>
+                    </div>
+                    <div class="chart-data">
+                        <div class=" d-flex  mt-15">
+                            <div class="text-left pl-3">
+                                <p class="no-margin">Bitcoin<span class="text-gray ml-2">BTC</span> <span class="text-info">$0.04</span></p>
+                            </div>
+                            <div class="text-right ml-auto pr-3">
+                                <p class="no-margin"><span class="text-danger">-1.33%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden">
+                    <div class="card-body pb-0 d-flex">
+                        <div>
+                            <h6 class="fs-13 mb-2 text-primary"><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ripple.svg " class="w-4 h-4 mr-2" alt="img">XRP / USD</h6>
+                            <h3 class="mb-0">$7,349</h3>
+                        </div>
+                        <div class="ml-auto text-right">
+                            <h6 class=" mb-3 text-danger">$0.14</h6>
+                            <p class=" mb-0 text-success"><span class="text-muted">Vol:</span>(-1.42%)</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper ">
+                        <canvas id="cryptoChart3" class="chart-dropshadow-secondary cryptoChart3 overflow-hidden"></canvas>
+                    </div>
+                    <div class="chart-data">
+                        <div class=" d-flex  mt-15">
+                            <div class="text-left pl-3">
+                                <p class="no-margin">Ripple<span class="text-gray ml-2">XRP</span> <span class="text-info">$1.32</span></p>
+                            </div>
+                            <div class="text-right ml-auto pr-3">
+                                <p class="no-margin"><span class="text-danger">+2.39%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden">
+                    <div class="card-body pb-0 d-flex">
+                        <div>
+                            <h6 class="fs-13 mb-2 text-primary"><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ethereum.svg " class="w-4 h-4 mr-2" alt="img">ETH / USD</h6>
+                            <h3 class="mb-0">$5,563</h3>
+                        </div>
+                        <div class="ml-auto text-right">
+                            <h6 class=" mb-3 text-danger">$0.12</h6>
+                            <p class=" mb-0 text-success"><span class="text-muted">Vol:</span>(-1.33%)</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper ">
+                        <canvas id="cryptoChart2" class="chart-dropshadow-info cryptoChart2 overflow-hidden"></canvas>
+                    </div>
+                    <div class="chart-data">
+                        <div class=" d-flex  mt-15">
+                            <div class="text-left pl-3">
+                                <p class="no-margin">Ethereum<span class="text-gray ml-2">ETH</span> <span class="text-info">$0.12%</span></p>
+                            </div>
+                            <div class="text-right ml-auto pr-3">
+                                <p class="no-margin"><span class="text-danger">+5.35%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden">
+                    <div class="card-body pb-0 d-flex">
+                        <div>
+                            <h6 class="fs-13 mb-2 text-primary"><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Dash.svg " class="w-4 h-4 mr-2" alt="img">DASH / USD</h6>
+                            <h3 class="mb-0">$2,546</h3>
+                        </div>
+                        <div class="ml-auto text-right">
+                            <h6 class=" mb-3 text-danger">$0.32</h6>
+                            <p class=" mb-0 text-success"><span class="text-muted">Vol:</span>(-2.14%)</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper ">
+                        <canvas id="cryptoChart4" class="chart-dropshadow-success cryptoChart4 overflow-hidden"></canvas>
+                    </div>
+                    <div class="chart-data">
+                        <div class=" d-flex  mt-15">
+                            <div class="text-left pl-3">
+                                <p class="no-margin"><span class="text-gray ml-2">DASH</span> <span class="text-info">$0.34</span></p>
+                            </div>
+                            <div class="text-right ml-auto pr-3">
+                                <p class="no-margin"><span class="text-danger">-2.57%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-4">
+                <div class="card res-tabs">
+                    <div class="card-header">
+                        <div class="card-title">Quick Trade</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="quicktrade tab-menu-heading border-top-0 border-left-0 border-right-0 pt-0 pl-0 pr-0">
+                            <div class="tabs-menu1">
+                                <ul class="nav">
+                                    <li class=""><a href="#tab-1" class="active" data-toggle="tab">Buy</a></li>
+                                    <li><a href="#tab-2" data-toggle="tab" class="">Sell</a></li>
+                                    <li><a href="#tab-3" data-toggle="tab" class="">Transfer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-1">
+                                <div class="">
+                                    <div class="form-group mb-5 mt-5">
+                                        <label class="form-label font-weight-normal fs-14">Choose Currency</label>
+                                        <select class="form-control nice-select">
+                                            <option>Bitcoin</option>
+                                            <option>Ethereum</option>
+                                            <option>EOS</option>
+                                            <option>Litecoin</option>
+                                            <option>DASH</option>
+                                        </select>
+                                    </div>
+                                    <form action="javascript:;">
+                                        <div class="form-group mb-5 ">
+                                            <label class="form-label font-weight-normal fs-14">Payments Method</label>
+                                            <select class="form-control nice-select">
+                                                <option>Debit Card</option>
+                                                <option>Pay Pal</option>
+                                                <option>Bank Transfer</option>
+                                                <option>Credit Card</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-5 fs-14">
+                                            <label class="">Amount</label>
+                                            <input class="form-control" type="text" placeholder="Amount">
+                                        </div>
+                                        <div class="form-group mb-5 fs-14">
+                                            <label class="">Wallet Address</label>
+                                            <input class="form-control" type="text" placeholder="wallet">
+                                        </div>
+                                        <button class="btn btn-primary btn-block mt-4" type="submit">Buy Coin</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-2">
+                                <div class="form-group mt-5 mb-5">
+                                    <label class="form-label font-weight-normal fs-14">Choose Currency</label>
+                                    <select class="form-control nice-select">
+                                        <option>Bitcoin</option>
+                                        <option>Ethereum</option>
+                                        <option>EOS</option>
+                                        <option>Litecoin</option>
+                                        <option>DASH</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Amount</label>
+                                    <input class="form-control" type="text" placeholder="Amount">
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Password</label>
+                                    <input class="form-control" type="password" placeholder="password">
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Wallet Address</label>
+                                    <input class="form-control" type="text" placeholder="wallet">
+                                </div>
+                                <button class="btn btn-secondary btn-block mt-4" type="submit">Sell Coin</button>
+                            </div>
+                            <div class="tab-pane userprof-tab" id="tab-3">
+                                <div class="form-group mt-5 mb-5">
+                                    <label class="form-label font-weight-normal fs-14">Choose Currency</label>
+                                    <select class="form-control nice-select">
+                                        <option>Bitcoin</option>
+                                        <option>Ethereum</option>
+                                        <option>EOS</option>
+                                        <option>Litecoin</option>
+                                        <option>DASH</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Amount</label>
+                                    <input class="form-control" type="text" placeholder="Amount">
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Password</label>
+                                    <input class="form-control" type="password" placeholder="password">
+                                </div>
+                                <div class="form-group mb-5 fs-14">
+                                    <label class="">Send To</label>
+                                    <input class="form-control" type="text" placeholder="Name">
+                                </div>
+                                <button class="btn btn-success btn-block mt-4" type="submit">Transfer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div id="carousel-indicator" class="carousel slide dashboard-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Exchange Statistics</h4>
+                                    <div class="exchange-statistics">
+                                        <span><img class="" src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/square-color/Bitcoin.svg " alt="image"></span>
+                                        <span><i class="fa fa-exchange inline-block ml-2 mr-2"></i></span>
+                                        <span><img class="" src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/square-color/Ethereum.svg " alt="image"></span>
+                                    </div>
+                                    <p class="mt-4 fs-16 mb-1">Bitcoin / Ethereum</p>
+                                    <div class="d-flex  align-items-center">
+                                        <span class=" mb-0 font-weight-semibold">Price</span>
+                                        <div class="text-primary mt-0 mb-2  ml-auto">
+                                            <h5 class="mb-0 ">0.00005463</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex  align-items-center">
+                                        <span class="font-weight-semibold mb-0">Volume</span>
+                                        <div class="text-primary mt-0 mb-0  ml-auto">
+                                            <h5 class=" mb-0">3.2738467</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item carousel slide dashboard-carousel" data-ride="carousel">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Exchange Statistics</h4>
+                                    <div class="exchange-statistics">
+                                        <span><img class="" src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/square-color/Ethereum.svg " alt="image"></span>
+                                        <span><i class="fa fa-exchange inline-block ml-2 mr-2"></i></span>
+                                        <span><img class="" src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/square-color/Ripple.svg " alt="image"></span>
+                                    </div>
+                                    <p class="mt-4 fs-16 mb-1">Bitcoin / Ethereum</p>
+                                    <div class="d-flex  align-items-center">
+                                        <span class=" mb-0 font-weight-semibold">Price</span>
+                                        <div class="text-primary mt-0 mb-2  ml-auto">
+                                            <h5 class="mb-0 ">0.00007439</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex  align-items-center">
+                                        <span class="font-weight-semibold mb-0">Volume</span>
+                                        <div class="text-primary mt-0 mb-0  ml-auto">
+                                            <h5 class=" mb-0">1.8425936</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-indicator" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-indicator" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Exchange Rate</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-2">
+                            <label class="form-label font-weight-normal fs-14">Choose Currency</label>
+                            <select class="form-control nice-select">
+                                <option>Bitcoin</option>
+                                <option>Ethereum</option>
+                                <option>EOS</option>
+                                <option>Litecoin</option>
+                                <option>DASH</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <div class="exchange mt-2 mb-2"><i class="fa fa-exchange inline-block btn-sm btn-success-light p-2 pt-0 pb-0 box-shadow-0"></i></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label font-weight-normal fs-14">Choose Currency</label>
+                            <select class="form-control nice-select">
+                                <option>EOS</option>
+                                <option>Bitcoin</option>
+                                <option>Ethereum</option>
+                                <option>Litecoin</option>
+                                <option>DASH</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-success btn-block mt-4" type="submit">Transfer Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">BTC Trending</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-5"><canvas id="crypto-donut" class="chart-dropshadow2 h-188"></canvas></div>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 col-md-4 col-lg-4">
+                                <div><span>BTC Sell</span></div><span class="h6 mb-0"><span class="dot-label bg-primary h-2 w-2 brround mr-2"></span>0.435000</span>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 col-md-4 col-lg-4 mt-4 mt-xl-0">
+                                <div><span>BTC Buy</span></div><span class="h6 mb-0"><span class="dot-label bg-info h-2 w-2 brround mr-2"></span>3.028400</span>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 col-md-4 col-lg-4 mt-4 mt-xl-0">
+                                <div><span>Exchanges</span></div><span class="h6 mb-0"><span class="dot-label bg-secondary h-2 w-2"></span>+35%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="card-title mb-2">Your Current Balance</div>
+                                <h2 class="mt-3 mb-2 text-primary">$32745.00</h2>
+                                <p class="text-muted"><span> Yearly profit</span></p>
+                                <a href="#" class="btn btn-pill btn-outline-primary">Buy More</a>
+                            </div>
+                            <div class="col-5 my-auto mt-auto">
+                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/svg/wallet.svg " alt="image" class="w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bitcoin / USD Rate</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="pl-5 pr-5 pt-5 ">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-sm-6">
+                                <p class=" mb-1"> Last price</p>
+                                <h3 class="mb-0 fs-20">$21358.7</h3>
+                                <span class="fs-12 text-muted"><span class="text-danger mr-1"><i class="fe fe-arrow-down ml-1"></i>0.9%</span>last year</span>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-sm-6 mt-4 mt-xl-0">
+                                <p class=" mb-1"> Daily change</p>
+                                <h3 class="mb-0 fs-20">$197.2</h3>
+                                <span class="fs-12 text-muted"><span class="text-success mr-1"><i class="fe fe-arrow-up ml-1"></i>0.15%</span>last year</span>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-sm-6 mt-4 mt-xl-0">
+                                <p class=" mb-1"> Market cap</p>
+                                <h3 class="mb-0 fs-20">$15,47,85,25</h3>
+                                <span class="fs-12 text-muted"><span class="text-danger mr-1"><i class="fe fe-arrow-down ml-1"></i>1.04%</span>last year</span>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-sm-6 mt-4 mt-xl-0">
+                                <p class=" mb-1 ">24th volume</p>
+                                <h3 class="mb-0 fs-20">231456.06</h3>
+                                <span class="fs-12 text-muted"><span class="text-success mr-1"><i class="fe fe-arrow-up ml-1"></i>2.08%</span>last year</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-3 pr-3 pb-0">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-sm-12 col-xl-4 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Crypto Currency News</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="list d-flex align-items-center border-bottom p-3">
+                            <div class="wrapper w-100">
+                                <p class="mb-2"><a href="#" class="">Bitcoin (BTC) Price Uptrend Intact: Bulls Sighting Fresh Increase</a></p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="badge badge-primary-light">
+                                        BTC
+                                    </div>
+                                    <small class="text-muted ml-auto badge badge-light">1 hour ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list d-flex align-items-center border-bottom p-3">
+                            <div class="wrapper w-100">
+                                <p class="mb-2"><a href="#" class="">NewsBTC is a Bitcoin news service that covers cryptocurrency news</a></p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="badge badge-secondary-light">
+                                        BTC
+                                    </div>
+                                    <small class="text-muted ml-auto badge badge-light">2 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list d-flex align-items-center border-bottom p-3">
+                            <div class="wrapper w-100">
+                                <p class="mb-2"><a href="#" class="">SpectroCoin provides easy, safe and quick access to Bitcoin for people</a></p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="badge badge-success-light">
+                                        Spectro
+                                    </div>
+                                    <small class="text-muted ml-auto badge badge-light">4 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list d-flex align-items-center border-bottom p-3">
+                            <div class="wrapper w-100">
+                                <p class="mb-2"><a href="#" class="">The Official blog of Bitcoin. Bitcoin is a peer-to-peer network based</a></p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="badge badge-danger-light">
+                                        BTC
+                                    </div>
+                                    <small class="text-muted ml-auto badge badge-light">8 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list d-flex align-items-center border-bottom p-3">
+                            <div class="wrapper w-100">
+                                <p class="mb-2"><a href="#" class="">The Official blog of Bitcoin. Bitcoin is a peer-to-peer network based</a></p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="badge badge-info-light">
+                                        BTC
+                                    </div>
+                                    <small class="text-muted ml-auto badge badge-light">8 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xl-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Transactions History</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table border table-bordered mb-0 text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Crypto Trade</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="">
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Bitcoin.svg  " class="w-5 h-5 mr-3" alt="">Bitcoin</td>
+                                        <td>05:12:16</td>
+                                        <td><span class="badge badge-success-light fs-12">completed</span></td>
+                                        <td class="text-success">+0,041 BTC</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ethereum.svg " class="w-5 h-5 mr-3" alt="">Ethereum</td>
+                                        <td>12:19:25</td>
+                                        <td><span class="badge badge-secondary-light fs-12">pending</span></td>
+                                        <td class="text-danger">-0.00215 ETH</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ripple.svg " class="w-5 h-5 mr-3" alt="">Ripple</td>
+                                        <td>10:23:42</td>
+                                        <td><span class="badge badge-danger-light fs-12">cancelled</span></td>
+                                        <td class="text-danger">+12.856 XRP</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Dash.svg " class="w-5 h-5 mr-3" alt="">Dash</td>
+                                        <td>02:01:15</td>
+                                        <td><span class="badge badge-secondary-light fs-12">pending</span></td>
+                                        <td class="text-success">+0,1535 DAH</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/litecoin.svg " class="w-5 h-5 mr-3" alt="">litecoin</td>
+                                        <td>07:16:25</td>
+                                        <td><span class="badge badge-info-light fs-12">exchanged</span></td>
+                                        <td class="text-info">11,85 LTC</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/monero.svg " class="w-5 h-5 mr-3" alt="">Monero</td>
+                                        <td>01:34:17</td>
+                                        <td><span class="badge badge-success-light fs-12">completed</span></td>
+                                        <td class="text-danger">-0,0445 BTC</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/NEM.svg " class="w-5 h-5 mr-3" alt="">NEM</td>
+                                        <td>08:45:32</td>
+                                        <td><span class="badge badge-success-light fs-12">completed</span></td>
+                                        <td class="text-success">+0,352 NEM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Trading Activities</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table border table-bordered mb-0 text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Currency</th>
+                                        <th>ID Number</th>
+                                        <th>Trade Time</th>
+                                        <th>Last Trade</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Bitcoin.svg  " class="w-4 h-4 mr-2" alt="">Bitcoin</td>
+                                        <td>#5346257370</td>
+                                        <td>03:14:32</td>
+                                        <td>$10513.00</td>
+                                        <td><span class="badge badge-danger-light fs-12">Cancel</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/litecoin.svg " class="w-4 h-4 mr-2" alt="">Litecoin</td>
+                                        <td>#5346257371</td>
+                                        <td>05:16:28</td>
+                                        <td>$425.25</td>
+                                        <td><span class="badge badge-success-light fs-12">Delivery</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ethereum.svg " class="w-4 h-4mr-2" alt="">Ethereum</td>
+                                        <td>#5346257372</td>
+                                        <td>09:28:59</td>
+                                        <td>$1547.67</td>
+                                        <td><span class="badge badge-success-light fs-12">Delivery</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/NEM.svg " class="w-4 h-4 mr-2" alt="">NEM</td>
+                                        <td>#5346257373</td>
+                                        <td>12:06:05</td>
+                                        <td>$ 723.48</td>
+                                        <td><span class="badge badge-warning-light fs-12">Hold</span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/monero.svg " class="w-4 h-4 mr-2" alt="">Monero</td>
+                                        <td>#5346257374</td>
+                                        <td>08:04:29</td>
+                                        <td>$5,14915</td>
+                                        <td><span class="badge badge-danger-light fs-12">Cancel</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Dash.svg " class="w-4 h-4 mr-2" alt="">Dash</td>
+                                        <td>#5346257375</td>
+                                        <td>11:15:48</td>
+                                        <td>$3,34650</td>
+                                        <td><span class="badge badge-warning-light fs-12">hold</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="~/admin-side/dashlot-admin/HTML/assets/images/crypto-currencies/regular/Ripple.svg " class="w-4 h-4 mr-2" alt="">Ripple</td>
+                                        <td>#5346257376</td>
+                                        <td>01:22:36</td>
+                                        <td>$6,25864</td>
+                                        <td><span class="badge badge-success-light fs-12">Delivery</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+    </div>
+</div>
+@*<div class="app-content icon-content">
+    <div class="section">
+        <div class="page-header">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="ti-package mr-1"></i> Trang Chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="bg-white ml-1 mr-1 p-5 mb-5 br-2">
+                    @if (Model != null)
+                    {
+                        <h2 class="mb-5 mt-5 font-weight-bold text-center text-primary">@Model.Name</h2>
+                        <div class="item-card9-desc mb-3 ">
+                            <a href="#" class="mr-2"><span class="text-black-50"><i class="fa fa-calendar-o text-muted mr-1"></i> @Model.DateModified.ToString("dd-MM-yyyy")</span></a>
+                            <a href="#"><span class="text-black-50"> <i class="fa fa-user"></i> Admin</span></a>
+                        </div>
+                        <div>
+                            @Html.Raw(Model.MildContent)
+                        </div>
+                    }
+                    else
+                    {
+                        <h2 class="mb-5 mt-5 font-weight-bold text-center text-primary">Đang cập nhật</h2>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+

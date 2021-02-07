@@ -1,0 +1,8 @@
+﻿#btnSelectBankCardImg, #btnSelectBankBillImg, #btnSelectCMNDImg {
+    background: #b1897c;
+    color: white;
+    border-radius: 0 4px 4px 0;
+}
+#btnSendKYC {
+    background: #272b44;
+}

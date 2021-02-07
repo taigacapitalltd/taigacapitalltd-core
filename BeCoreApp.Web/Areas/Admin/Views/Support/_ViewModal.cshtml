@@ -1,0 +1,44 @@
+﻿<div id="modal-view" class="modal fade" tabindex="-1" data-backdrop="static"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title badge badge-secondary-light" id="exampleModalLabel">
+                    Chi Tiết
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmMaintainance">
+
+                    <div class="form-group">
+                        <label for="txtName" class="form-control-label">Tên Bài Viết</label>
+                        <input type="text" id="txtNameView" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="txtContent" class="form-control-label">Nội Dung</label>
+                        <textarea id="txtRequestContentView" rows="20" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtContent" class="form-control-label">Trả Lời</label>
+                        <textarea id="txtResponseContentView" rows="20" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="badgeType" class="form-control-label font-weight-semibold">Trạng Thái</label>
+                        <div id="badgeType"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Hệ Sinh Thái";
+}
+@section Scripts{
+}
+
+@section Styles{
+}
+<div class="app-content icon-content">
+    <div class="section">
+
+        <!-- Page-header opened -->
+        <div class="page-header">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="ti-package mr-1"></i> Trang Chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+            </ol>
+        </div>
+        <!-- Page-header closed -->
+        <!-- row opened -->
+        <div class="row">
+
+            @for (int i = 0; i < Model.MainItems.Count; i++)
+            {
+                string className = "main2";
+                if (i >= 4)
+                {
+                    className = "main1";
+                }
+
+                string iconName = "shopping-cart";
+                string blogCategoryName = Model.MainItems[i].Name.ToLower();
+                if (blogCategoryName.Contains("sản phẩm"))
+                {
+                    iconName = "shopping-cart";
+                }
+                else if (blogCategoryName.Contains("giáo dục"))
+                {
+                    iconName = "book";
+                }
+                else if (blogCategoryName.Contains("film"))
+                {
+
+                    iconName = "film";
+                }
+                else if (blogCategoryName.Contains("bất động sản"))
+                {
+                    iconName = "home";
+                }
+                else if (blogCategoryName.Contains("tài chính"))
+                {
+
+                    iconName = "money";
+                }
+                else if (blogCategoryName.Contains("trò chơi"))
+                {
+                    iconName = "gamepad";
+                }
+                else if (blogCategoryName.Contains("chia sẻ kinh tế"))
+                {
+                    iconName = "handshake-o";
+                }
+                else if (blogCategoryName.Contains("dịch vụ"))
+                {
+                    iconName = "ge";
+                }
+                else
+                {
+                    iconName = "recycle";
+                }
+
+
+                <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="service-card text-center mb-md-0">
+                                <a target="_blank" href="@Model.MainItems[i].URL">
+                                    <div class="bg-@className-transparent icon-bg icon-service text-@className">
+                                        <i class="fa-spin fa fa-@iconName"></i>
+                                    </div>
+                                </a>
+
+                                <div class="servic-data mt-3">
+                                    <a target="_blank" href="@Model.MainItems[i].URL">
+                                        <h5 style="text-transform:uppercase" class="mb-0">@Model.MainItems[i].Name</h5>
+                                    </a>
+                                    @*@if (!string.IsNullOrWhiteSpace(Model.MainItems[i].Description))
+                                    {
+                                        <p class="text-muted leading-tight">
+                                            @Html.Raw(Model.MainItems[i].Description)
+                                        </p>
+                                    }*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <!-- row opened -->
+
+
+    </div>
+</div>
+
+<style>
+
+    .bg-main1-transparent {
+        background: #94a0df78;
+        color: #373e6b;
+    }
+
+    .bg-main2-transparent {
+        background: #e1ab9859;
+        color: #be8774;
+    }
+
+    .icon-bg i {
+        font-size: 2rem;
+    }
+
+    .card-body-team .brround {
+        border: 3px solid #be8774c2;
+    }
+</style>
+

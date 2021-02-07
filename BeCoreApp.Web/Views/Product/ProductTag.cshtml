@@ -1,0 +1,150 @@
+﻿@model BeCoreApp.Models.ProductViewModels.CatalogViewModel
+@{
+    ViewData["Title"] = Model.Data.CurrentPage == 1 ? Model.Tag.Name : Model.Tag.Name + " - Page " + Model.Data.CurrentPage;
+    ViewData["MetaKeyword"] = Model.Data.CurrentPage == 1 ? Model.Tag.Name : Model.Tag.Name + " - Page " + Model.Data.CurrentPage;
+    ViewData["MetaDescription"] = Model.Data.CurrentPage == 1 ? Model.Tag.Name : Model.Tag.Name + " - Page " + Model.Data.CurrentPage;
+}
+<div id="tbay-main-content">
+    <section id="tbay-breadscrumb" class="tbay-breadscrumb">
+        <div class="container">
+            <div class="breadscrumb-inner">
+                <ol class="tbay-woocommerce-breadcrumb breadcrumb">
+                    <li><a href="/">Trang Chủ</a></li>
+                    <li><a href="/">Chủ Đề</a></li>
+                    <li>@Model.Tag.Name</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-container" class="main-content container">
+        <div class="row">
+            <div id="main-content" class="archive-shop col-xs-12 col-xs-12 col-md-12 col-lg-9 pull-right">
+                <div id="primary" class="content-area">
+                    <div id="content" class="site-content" role="main">
+                        <div class="tbay-filter">
+                            <div class="display-mode-warpper display-mode">
+                                <a href="javascript:void(0);" id="display-mode-grid" class="change-view display-mode-btn active" title="'Grid'"><i class="ti-layout-grid2"></i></a>
+                                <a href="javascript:void(0);" id="display-mode-list" class="change-view display-mode-btn list " title="'List'"><i class="ti-view-list"></i></a>
+                            </div>
+                            <div class="woocommerce-notices-wrapper"></div>
+                            <p class="woocommerce-result-count">
+                                @Model.Tag.Name - @Model.Data.RowCount sản phẩm
+                            </p>
+                            <form class="woocommerce-ordering" method="get">
+                                <span>Sort by: </span>
+                                <select name="orderby" class="orderby" aria-label="Shop order">
+                                    <option value="menu_order" selected='selected'>Default sorting</option>
+                                    <option value="popularity">Sort by popularity</option>
+                                </select>
+                            </form>
+                        </div>
+
+                        <div class="products products-grid">
+                            <div class="row" data-xlgdesktop=3 data-desktop=3 data-desktopsmall=3 data-tablet=2 data-mobile=2>
+
+                                @foreach (var product in Model.Data.Results)
+                                {
+                                    var productDetailUrl = $"/{product.SeoAlias}-p.{product.Id}.html";
+                                    //status-publish instock product_cat-milk-cream product_cat-ocean-foods product_cat-vegetables product_tag-fruit-theme product_tag-organic-food product_tag-organic-shop has-post-thumbnail featured taxable shipping-taxable purchasable product-type-variable has-default-attributes
+                                    <div class="product-box col-xs-6 col-lg-4 col-md-4 col-sm-6 grid product ">
+                                        <div class="product-block grid ">
+                                            <div class="product-content">
+                                                <div class="block-inner">
+                                                    <figure class="image">
+                                                        <a title="@product.Name" href="@productDetailUrl" class="product-image">
+                                                            @if (product.ProductImages.Count < 0)
+                                                            {
+                                                                <img width="405" height="330" src="@product.ProductImages[0].Path" class="attachment-shop_catalog image-effect wp-post-image" alt="@product.Name" />
+                                                                <img width="405" height="330" src="@product.ProductImages[1].Path" class="image-hover wp-post-image" alt="@product.Name" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <img width="405" height="330" src="@product.Image" class="attachment-shop_catalog image-effect wp-post-image" alt="@product.Name" />
+                                                                <img width="405" height="330" src="@product.Image" class="image-hover wp-post-image" alt="@product.Name" />
+                                                            }
+
+                                                            @if (product.PromotionPrice.HasValue && product.PromotionPrice.Value > 0)
+                                                            {
+                                                                <span class="onsale">
+                                                                    <span class="featured not-sale">- @Convert.ToInt32((product.Price - product.PromotionPrice) / product.Price * 100)%</span>
+                                                                </span>
+                                                            }
+                                                        </a>
+                                                        <ul class="show-brand">
+                                                            @foreach (var productTag in product.ProductTags)
+                                                            {
+                                                                var tagDetailUrl = $"/chu-de-san-pham/{productTag.TagId}.html";
+                                                                <li><a href="@tagDetailUrl">@productTag.Tag.Name</a></li>
+                                                            }
+                                                        </ul>
+                                                    </figure>
+                                                </div>
+                                                <div class="caption">
+                                                    <div class="meta">
+                                                        <div class="infor">
+                                                            <div class="name-subtitle">
+                                                                <h3 class="name"><a href="@productDetailUrl">@product.Name</a></h3>
+                                                                <div class="tbay-subtitle">(@product.ProductType.Name)</div>
+                                                            </div>
+                                                            <span class="price">
+                                                                @if (product.PromotionPrice.HasValue && product.PromotionPrice.Value > 0)
+                                                                {
+                                                                    <del>
+                                                                        <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.Price)đ</span>
+                                                                    </del>
+                                                                    <ins>
+                                                                        <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.PromotionPrice)đ</span>
+                                                                    </ins>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <ins>
+                                                                        <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.Price)đ</span>
+                                                                    </ins>
+                                                                }
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="groups-button clearfix">
+                                                        <div class="add-cart" title="Add to cart">
+                                                            <a href="@productDetailUrl" rel="nofollow" class="button product_type_simple product_type_simple">
+                                                                <i class="icofont-shopping-cart"></i> <span class="title-cart">Chọn sản phẩm</span>
+                                                            </a>
+                                                        </div>
+                                                        <a href="@productDetailUrl" class="button yith-wcqv-button tbay-tooltip btn-view-fast-product" data-id="@product.Id" title="Xem nhanh">
+                                                            <span><i class="icofont-eye-alt"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        @await Component.InvokeAsync("Pager", Model.Data)
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-3">
+                <aside class="sidebar sidebar-left">
+                    <aside id="tbay_custom_menu-2" class="widget widget_tbay_custom_menu hidden-xs">
+                        @await Component.InvokeAsync("HomeSidebarMenu")
+                    </aside>
+
+                    <aside id="woocommerce_product_tag_cloud-3" class="widget woocommerce widget_product_tag_cloud">
+                        <h2 class="widget-title">Chủ Đề ( Tags )</h2><div class="tagcloud">
+                            @foreach (var tag in Model.Tags)
+                            {
+                                var tagDetailUrl = $"/chu-de-san-pham/{tag.Id}.html";
+                                <a href="@tagDetailUrl" class="tag-cloud-link" style="font-size: 8pt;">@tag.Name</a>
+                            }
+                        </div>
+                    </aside>
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>

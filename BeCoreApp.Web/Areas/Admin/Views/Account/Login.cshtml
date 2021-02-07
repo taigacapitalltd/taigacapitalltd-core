@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "_LayoutAccount";
+}
+
+@section Styles{
+}
+
+@section Scripts{
+    <script src="~/admin-app/controllers/account/login.js" asp-append-version="true"></script>
+    <script>
+        var login = new LoginController();
+        login.initialize();
+    </script>
+}
+
+<div class="page">
+    <div class="">
+        <div class="container">
+            <div class="">
+                <div class="col col-login mx-auto">
+                    <div class="text-center">
+                        <img src="~/admin-side/dashlot-admin/HTML//assets/images/brand/logo1.png" class="header-brand-img dark-theme mx-auto text-center h-100 mb-5  " alt="Dashlot logo">
+                    </div>
+                </div>
+                <div class="col-xl-4 justify-content-center mx-auto text-center">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+
+                                @*<div class="col col-login mx-auto mt-4">
+                            <div class="text-center">
+                                <img src="~/admin-side/dashlot-admin/HTML/assets/images/brand/logo web.png" class="header-brand-img desktop-logo h-100 mb-3" alt="Dashlot logo" style="width:240px;" />
+                            </div>
+                        </div>*@
+                                <div class="card-body p-6 about-con pabout">
+                                    <div class="card-title text-center  mb-4">ĐĂNG NHẬP</div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtUserName" placeholder="Tài khoản">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="txtPassword" placeholder="Mật Khẩu">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <a href="/Admin/Account/ForgotPassword" class="float-right small text-info">Quên mật khẩu?</a>
+                                        </label>
+                                    </div>
+                                    <div class="form-footer mt-1">
+                                        <a class="btn btn-success btn-block" id="btnLogin">Đăng nhập</a>
+                                    </div>
+                                    <hr class="divider">
+                                    <div class="text-center fs-15 mt-3">
+                                        Bạn chưa có tài khoản? <a href="/Admin/Account/Register" class="text-primary">Đăng ký</a>
+                                    </div>
+
+                                    @*<div class="mt-2">
+                                <a href="#" class="btn btn-facebook btn-block">Đăng nhập qua Facebook</a>
+                                <a href="#" class="btn btn-google btn-block">Đăng nhập qua Google</a>
+                            </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

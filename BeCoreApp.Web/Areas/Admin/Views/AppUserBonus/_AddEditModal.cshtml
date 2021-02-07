@@ -1,0 +1,51 @@
+﻿<div id="modal-add-edit" class="modal fade" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title badge badge-secondary-light" id="exampleModalLabel">
+                    Cấu Hình Thưởng
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmMaintainance">
+                    <div class="form-group m-form__group">
+                        <label for="txtLevelStrategy" class="form-control-label">Cấp Độ Hoạt Động</label>
+                        <input type="text" id="txtLevelStrategy" readonly class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <input type="hidden" id="hidId" />
+                        <label for="txtRewardPoint" class="form-control-label">Điểm Thưởng</label>
+                        <input type="text" id="txtRewardPoint" class="form-control m-input m-input--air numeric">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtRecruitingBonus" class="form-control-label">Tuyển Dụng</label>
+                        <input type="text" id="txtRecruitingBonus" class="form-control m-input m-input--air numeric">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtUplineFund" class="form-control-label">Tuyến Trên</label>
+                        <input type="text" id="txtUplineFund" class="form-control m-input m-input--air numeric">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtMoneyReceive" class="form-control-label">Thưởng Lên Cấp</label>
+                        <input type="text" id="txtMoneyReceive" class="form-control m-input m-input--air numeric">
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCancel" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button type="button" id="btnSave" class="btn btn-success">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+﻿@model BeCoreApp.Models.ProjectViewModels.CatalogViewModel
+@*@{
+        ViewData["Title"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.Name : Model.MenuItemVM.Name + " - Page " + Model.Data.CurrentPage;
+        ViewData["MetaKeyword"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.SeoKeywords : Model.MenuItemVM.SeoKeywords + " - Page " + Model.Data.CurrentPage;
+        ViewData["MetaDescription"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.SeoDescription : Model.MenuItemVM.SeoDescription + " - Page " + Model.Data.CurrentPage;
+    }*@
+<link href="~/client-side/fbsbatdongsan/css/project/index/index.css" rel="stylesheet" type='text/css' media='all' />
+@Html.Partial("_AdvancedFBS")
+
+<div id="section-body" class="sticky_show_scroll_active">
+    <div class="container">
+        <!--start compare panel-->
+        <div id="compare-controller" class="compare-panel">
+            <div class="compare-panel-header">
+                <h4 class="title"> Compare Listings <span class="panel-btn-close pull-right"><i class="fa fa-times"></i></span></h4>
+            </div>
+            <div id="compare-properties-basket"></div>
+        </div>
+        <!--end compare panel-->
+        <div class="page-title breadcrumb-top">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb">
+                        <li itemscope itemtype="">
+                            <a itemprop="url" href="/">
+                                <span itemprop="title">Trang Chủ</span>
+                            </a>
+                        </li>
+                        <li class="active">Dự Án</li>
+                    </ol>
+                    <div class="page-title-left">
+                        <h1 class="title-head">Dự Án</h1>
+                    </div>
+                    <div class="page-title-right">
+                        @*<div class="view">
+                            <div class="table-cell hidden-xs">
+                                <span class="view-btn btn-list active"><i class="fa fa-th-list"></i></span>
+                                <span class="view-btn btn-grid "><i class="fa fa-th-large"></i></span>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 list-grid-area container-contentbar">
+                <div id="content-area">
+                    @foreach (var projectCategory in Model.ProjectCategoryVMs)
+                    {
+                        var projectVMs = Model.ProjectVMs.Where(x => x.ProjectCategoryId == projectCategory.Id).ToList();
+                        if (projectVMs.Count > 0)
+                        {
+                            var projectCategoryUrl = $"/{projectCategory.SeoAlias}-pjc.{projectCategory.Id}.html";
+                            <!--start list tabs-->
+                            <div class="list-tabs table-list full-width">
+                                <div class="tabs table-cell">
+                                    <ul>
+                                        <li><a href="@projectCategoryUrl" class=active>@projectCategory.Name</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end list tabs-->
+                            <!--start property items-->
+                            <div class="property-listing list-view">
+                                <div class="row">
+                                    @foreach (var project in projectVMs)
+                                    {
+                                        var projectDetailUrl = $"/{project.SeoAlias}-pj.{project.Id}.html";
+                                        <div id="ID-@project.Id" class="item-wrap infobox_trigger featured_prop item-luxury-family-home">
+                                            <div class="property-item table-list">
+                                                <div class="table-cell">
+                                                    <div class="figure-block">
+                                                        <figure class="item-thumb">
+                                                            <a class="hover-effect" href="@projectDetailUrl">
+                                                                <img src="@project.Image" class="attachment-houzez-property-thumb-image size-houzez-property-thumb-image wp-post-image" alt="" srcset="@project.Image" sizes="(max-width: 385px) 100vw, 385px" />
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="item-body table-cell">
+                                                    <div class="body-left table-cell">
+                                                        <div class="info-row">
+                                                            <h2 class="property-title">
+                                                                <a href="@projectDetailUrl">@project.Name</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="info-row amenities hide-on-grid">
+                                                            <p>
+                                                                <span class="lbl-left">Địa chỉ:</span>
+                                                                <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.Address) ? project.Address : "Đang cập nhật")</span>
+                                                            </p>
+                                                            <p>
+                                                                <span class="lbl-left">Giá:</span>
+                                                                <span class="lbl-right">Đang cập nhật</span>
+                                                            </p>
+                                                            <p>
+                                                                <span class="lbl-left">Chủ đầu tư:</span>
+                                                                <span class="lbl-right">@project.EnterpriseName</span>
+                                                            </p>
+                                                            <p>
+                                                                <span class="lbl-left">Diện tích:</span>
+                                                                <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.AreageBuild) ? project.AreageBuild : "Đang cập nhật")</span>
+                                                            </p>
+                                                            <p>
+                                                                <span class="lbl-left">Tiến độ xây dựng:</span>
+                                                                <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.ProgressBuild) ? project.ProgressBuild : "Đang cập nhật")</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="info-row date hide-on-grid">
+                                                            <p class="prop-user-agent"><i class="fa fa-user"></i> <a href="">Admin </a> - <i class="fa fa-calendar"></i>@project.DateModified.ToString("hh:mm dd-MM-yyyy")</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-list full-width hide-on-list">
+                                                        <div class="cell">
+                                                            <div class="info-row amenities">
+                                                                <p>
+                                                                    <span class="lbl-left">Địa chỉ:</span>
+                                                                    <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.Address) ? project.Address : "Đang cập nhật")</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span class="lbl-left">Giá:</span>
+                                                                    <span class="lbl-right">Đang cập nhật</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span class="lbl-left">Chủ đầu tư:</span>
+                                                                    <span class="lbl-right">@project.EnterpriseName</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span class="lbl-left">Diện tích:</span>
+                                                                    <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.AreageBuild) ? project.AreageBuild : "Đang cập nhật")</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span class="lbl-left">Tiến độ xây dựng:</span>
+                                                                    <span class="lbl-right">@(!string.IsNullOrWhiteSpace(project.ProgressBuild) ? project.ProgressBuild : "Đang cập nhật")</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-foot date hide-on-list">
+                                                <div class="item-foot-left">
+                                                    <p class="prop-user-agent"><i class="fa fa-user"></i> <a href="">Admin</a> </p>
+                                                </div>
+                                                <div class="item-foot-right">
+                                                    <p class="prop-date"><i class="fa fa-calendar"></i>@project.DateModified.ToString("hh:mm dd-MM-yyyy")</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <!--end property items-->
+                        }
+                    }
+                </div>
+            </div>
+            <!-- end container-content -->
+            @await Component.InvokeAsync("Sidebar")
+        </div>
+    </div>
+    <!--.container Start in header-->
+</div>

@@ -1,0 +1,542 @@
+﻿@model BeCoreApp.Models.ProjectViewModels.DetailViewModel
+@{
+    //ViewData["Title"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.Name : Model.MenuItemVM.Name + " - Page " + Model.Data.CurrentPage;
+    //ViewData["MetaKeyword"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.SeoKeywords : Model.MenuItemVM.SeoKeywords + " - Page " + Model.Data.CurrentPage;
+    //ViewData["MetaDescription"] = Model.Data.CurrentPage == 1 ? Model.MenuItemVM.SeoDescription : Model.MenuItemVM.SeoDescription + " - Page " + Model.Data.CurrentPage;
+    Layout = "_ProjectDetailLayoutFBS";
+}
+<link href="~/client-side/fbsbatdongsan/css/project/project-detail/index.css" rel="stylesheet" type='text/css' media='all' />
+@Html.Partial("_AdvancedFBS")
+
+<!--start detail top-->
+<!--end detail top-->
+<div id="section-body" class="sticky_show_scroll_active">
+    <!--start compare panel-->
+    <div id="compare-controller" class="compare-panel">
+        <div class="compare-panel-header">
+            <h4 class="title"> Compare Listings <span class="panel-btn-close pull-right"><i class="fa fa-times"></i></span></h4>
+        </div>
+        <div id="compare-properties-basket"></div>
+    </div>
+    <!--end compare panel-->
+
+    <section class="section-detail-content">
+        <div class="container">
+            <div class="page-title breadcrumb-top">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol class="breadcrumb">
+                            <li itemscope="" itemtype=""><a itemprop="url" href="/"> <span itemprop="title">Trang Chủ</span> </a></li>
+                            <li itemscope="" itemtype=""><a itemprop="url" href="/"> <span itemprop="title">Dự Án</span> </a></li>
+                            <li itemscope="" itemtype=""><a itemprop="url" href="/"> <span itemprop="title">@Model.ProjectCategoryVM.Name</span> </a></li>
+                            <li class="active">@Model.ProjectVM.Name</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            @*<section class="detail-top detail-top-grid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="header-detail">
+                                <div class="header-left">
+                                    <ol class="breadcrumb">
+                                        <li itemscope itemtype="">
+                                            <a itemprop="url" href="/">
+                                                <span itemprop="title">Trang Chủ</span>
+                                            </a>
+                                        </li>
+                                        <li itemscope itemtype="">
+                                            <a itemprop="url" href="/">
+                                                <span itemprop="title">Dự Án</span>
+                                            </a>
+                                        </li>
+                                        <li itemscope itemtype="">
+                                            <a itemprop="url" href="/">
+                                                <span itemprop="title">@Model.ProjectCategoryVM.Name</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">@Model.ProjectVM.Name</li>
+                                    </ol>
+                                    <div class="table-list">
+                                            <div class="table-cell"><h1 class="title-head">@Model.ProjectVM.Name</h1></div>
+                                            <div class="table-cell hidden-sm hidden-xs">
+                                                <span class="label-wrap">
+                                                    <span class="label-status label-status-7 label label-default"><a href="http://houzez03.favethemes.com/status/for-sale/">For Sale</a></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <address class="property-address">@Model.ProjectVM.Address</address>
+                                </div>
+                                <div class="header-right">
+                                    <ul class="actions">
+                                            <li class="share-btn">
+
+                                                <div class="share_tooltip tooltip_left fade">
+                                                    <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-facebook"></i></a>
+                                                    <a href="https://twitter.com/intent/tweet?text=Luxury+apartment+bay+view&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&via=Houzez" onclick="if(!document.getElementById('td_social_networks_buttons')){window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;}"><i class="fa fa-twitter"></i></a>
+
+                                                    <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&amp;media=http://houzez03.favethemes.com/wp-content/uploads/2016/03/chicago-05-1024x688.jpg" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-pinterest"></i></a>
+
+                                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&title=Luxury+apartment+bay+view&source=http%3A%2F%2Fhouzez03.favethemes.com%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+                                                    <a href="http://plus.google.com/share?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-google-plus"></i></a>
+                                                    <a href="mailto:example.com?subject=Luxury+apartment+bay+view&body=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F"><i class="fa fa-envelope"></i></a>
+                                                </div>
+                                                <span title="" data-placement="right" data-toggle="tooltip" data-original-title="share"><i class="fa fa-share-alt"></i></span>
+                                            </li>
+                                            <li class="fvrt-btn">
+                                                <span class="add_fav" data-placement="right" data-toggle="tooltip" data-original-title="Favorite" data-propid="341"><i class="fa fa-heart-o"></i></span>
+                                            </li>
+                                            <li class="print-btn">
+                                                <span data-toggle="tooltip" data-placement="right" data-original-title="Print"><i id="" class="fa fa-print houzez-print" data-propid="341"></i></span>
+                                            </li>
+                                        </ul>
+                                        <span class="item-price">$987,000</span><span class="item-sub-price">$6,350&#47;sq ft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>*@
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 list-grid-area container-contentbar">
+                    <div id="content-area">
+                        <div class="detail-bar">
+
+                            <div class="detail-media detail-content-slideshow">
+                                <div class="page-title">
+                                    <h1>@Model.ProjectVM.Name</h1>
+                                    <ul class="author-meta">
+                                        <li class="name">
+                                            <a>
+                                                <img src="//houzez01.favethemes.com/wp-content/uploads/2016/02/agent1-1.jpg" alt="Auther Image" class="meta-image" height="40" width="40">
+                                            </a> by <a>Admin</a>
+                                        </li>
+                                        <li><i class="fa fa-calendar"></i> 09:31 25-04-2019</li>
+                                        <li><i class="fa fa-bookmark-o"></i> <a href="//houzez03.favethemes.com/category/business/" rel="category tag">Dự án</a></li>
+                                        @*<li><i class="fa fa-eye"></i></li>*@
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+
+                                    <div id="gallery" class="tab-pane fade in active">
+                                        <span class="label-wrap visible-sm visible-xs">
+                                            <span class="label label-primary label-status-7">For Sale</span>
+                                        </span>
+
+                                        <div class="detail-slider-wrap">
+                                            <div class="detail-slider owl-carousel owl-theme">
+                                                @foreach (var productImage in Model.ProjectImageVMs)
+                                                {
+                                                    <div class="item" style="background-image: url(@productImage.Path)">
+                                                        <a class="popup-trigger banner-link" href="#"></a>
+                                                    </div>
+                                                }
+                                            </div>
+                                            <div class="detail-slider-nav-wrap">
+                                                <div class="detail-slider-nav owl-carousel owl-theme">
+                                                    @foreach (var productImage in Model.ProjectImageVMs)
+                                                    {
+                                                        <div class="item">
+                                                            <img src="@productImage.Path" alt="inner-living-room-3" width="100" height="70" />
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="singlePropertyMap" class="tab-pane fade ">
+                                        <div class="mapPlaceholder">
+                                            <div class="loader-ripple">
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="securityHouzezMap" name="securityHouzezMap" value="ae9c948360" /><input type="hidden" name="_wp_http_referer" value="/property/luxury-apartment-bay-view/?s_top=v3&amp;agent_form=yes" />                <input type="hidden" name="prop_id" id="prop_id" value="341" />
+
+                                    <div id="street-map" class="tab-pane fade "></div>
+
+                                </div>
+
+                                <div class="media-tabs">
+                                    <ul class="media-tabs-list">
+                                        <li class="popup-trigger" data-placement="bottom" data-toggle="tooltip" data-original-title="View Photos">
+                                            <a href="#gallery" data-toggle="tab">
+                                                <i class="fa fa-camera"></i>
+                                            </a>
+                                        </li>
+
+                                        @*<li data-placement="bottom" data-toggle="tooltip" data-original-title="Map View">
+                                                <a href="#singlePropertyMap" id="houzezToggleMapView" data-toggle="tab">
+                                                    <i class="fa fa-map"></i>
+                                                </a>
+                                            </li>
+
+                                            <li data-placement="bottom" data-toggle="tooltip" data-original-title="Street View ">
+                                                <a href="#street-map" data-toggle="tab">
+                                                    <i class="fa fa-street-view"></i>
+                                                </a>
+                                            </li>*@
+
+                                    </ul>
+                                    <ul class="actions">
+                                        <li class="share-btn">
+
+                                            <div class="share_tooltip tooltip_left fade">
+                                                <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/intent/tweet?text=Luxury+apartment+bay+view&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&via=Houzez" onclick="if(!document.getElementById('td_social_networks_buttons')){window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;}"><i class="fa fa-twitter"></i></a>
+
+                                                <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&amp;media=http://houzez03.favethemes.com/wp-content/uploads/2016/03/chicago-05-1024x688.jpg" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-pinterest"></i></a>
+
+                                                <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&title=Luxury+apartment+bay+view&source=http%3A%2F%2Fhouzez03.favethemes.com%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+                                                <a href="http://plus.google.com/share?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-google-plus"></i></a>
+                                                <a href="mailto:example.com?subject=Luxury+apartment+bay+view&body=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F"><i class="fa fa-envelope"></i></a>
+                                            </div>
+                                            <span title="" data-placement="right" data-toggle="tooltip" data-original-title="share"><i class="fa fa-share-alt"></i></span>
+                                        </li>
+                                        <li>
+                                            <span class="add_fav" data-placement="right" data-toggle="tooltip" data-original-title="Favorite" data-propid="341"><i class="fa fa-heart-o"></i></span>
+                                        </li>
+                                        <li class="print-btn">
+                                            <span data-toggle="tooltip" data-placement="right" data-original-title="Print"><i id="" class="fa fa-print houzez-print" data-propid="341"></i></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="detail" class="detail-list detail-block target-block">
+                                <div class="detail-title">
+                                    <h2 class="title-left">Thông Tin Chung</h2>
+                                    <div class="title-right">
+                                        <p>Cập nhật @Model.ProjectVM.DateModified.ToString("dd-MM-yyy")</p>
+                                    </div>
+
+                                </div>
+                                <div class="alert alert-info">
+                                    <ul class="list-two-col">
+                                        <li><strong>Tên dự án:</strong> @Model.ProjectVM.Name</li>
+                                        <li><strong>Chủ đầu tư:</strong>  @Model.ProjectVM.EnterpriseName</li>
+                                        <li><strong>Tổng Diện tích:</strong> @Model.ProjectVM.TotalArea</li>
+                                        <li><strong>Diện tích xây dựng:</strong> @Model.ProjectVM.AreageBuild</li>
+                                        <li><strong>Loại hình phát triển:</strong> @Model.ProjectVM.ProjectCategoryName</li>
+                                        <li><strong>Năm bàn giao:</strong> @Model.ProjectVM.HandOverTheHouse</li>
+                                        <li><strong>Tiến độ thực hiện:</strong> @Model.ProjectVM.ProgressBuild</li>
+                                        <li><strong>Qui mô dự án:</strong> @Model.ProjectVM.ProjectScale</li>
+                                        <li><strong>Địa chỉ:</strong> @Model.ProjectVM.Address</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="detail-content-tabber">
+                                <!--start detail tabs-->
+                                <ul class="detail-tabs">
+                                    <li class="active">Tổng quan</li>
+                                    <li class="">Vị trí</li>
+                                    <li class="">Hạ tầng</li>
+                                    <li class="">Sơ đồ tổng thể</li>
+                                    <li class="">Thư viện ảnh</li>
+                                </ul>
+                                <!--end detail tabs-->
+                                <!--start tab-content-->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in">
+                                        <div id="content" class="property-description detail-block target-block">
+                                            <div class="detail-title"></div>
+                                            <p>@Html.Raw(Model.ProjectVM.Content)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade">
+                                        <div id="location" class="property-description detail-block target-block">
+                                            <div class="detail-title"></div>
+                                            <p>@Html.Raw(Model.ProjectVM.Location)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade">
+                                        <div id="infrastructure" class="property-description detail-block target-block">
+                                            <div class="detail-title"></div>
+                                            <p>@Html.Raw(Model.ProjectVM.Infrastructure)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade">
+                                        <div id="overallDiagram" class="property-description detail-block target-block">
+                                            <div class="detail-title"></div>
+                                            <p>@Html.Raw(Model.ProjectVM.OverallDiagram)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade">
+                                        <div id="overallDiagram" class="property-description detail-block target-block">
+                                            <div class="detail-title"></div>
+                                            <div class="detail-gallery detail-block houzez-gallery-prop-v2 clearfix">
+                                                @foreach (var projectLibrary in Model.ProjectLibraryVMs)
+                                                {
+                                                    <div class="col-sm-3">
+                                                        <figure class="item-thumb">
+                                                            <a href="@projectLibrary.Path" rel="prettyPhoto[gallery395]" class="hover-effect">
+                                                                <img src="@projectLibrary.Path" width="380" height="255" alt="inner-living-room-3">
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--end tab-content-->
+                            </div>
+
+                            @if (!string.IsNullOrWhiteSpace(Model.ProjectVM.Video))
+                            {
+                                <div id="video" class="property-video detail-block target-block">
+                                    <div class="detail-title">
+                                        <h2 class="title-left">Video</h2>
+                                    </div>
+                                    <div class="video-block">
+                                        <a data-fancy="property_video" href="@Model.ProjectVM.Video">
+                                            <span class="play-icon">
+                                                <img src="//29135-108621-raikfcquaxqncofqfm.stackpathdns.com/wp-content/themes/houzez/images/video-play-icon.png" alt="" width="70" height="50">
+                                            </span>
+                                            <img width="810" height="430"
+                                                 src="https://houzez03.favethemes.com/wp-content/uploads/2016/01/villa-1-810x430.jpg"
+                                                 class="attachment-houzez-property-detail-gallery size-houzez-property-detail-gallery" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+
+                            <div id="agent_bottom" class="detail-contact detail-block target-block">
+                                <div class="detail-title">
+                                    <h2 class="title-left">Thông tin liên hệ</h2>
+                                    <div class="title-right">
+                                        <strong>
+                                            <a href="http://houzez03.favethemes.com/agent/brittany-watkins/">View my listings</a>
+                                        </strong>
+                                    </div>
+                                </div>
+
+                                <form method="post" action="#">
+
+                                    <div class="media agent-media">
+                                        <div class="media-left">
+                                            <a href="http://houzez03.favethemes.com/agent/brittany-watkins/">
+                                                <img src="//29135-108621-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/02/agent-2-150x150.jpg" alt="Brittany Watkins" width="80" height="80">
+                                            </a>
+                                        </div>
+                                        @*<div class="media-body">
+                                                <dl>
+                                                    <dd><i class="fa fa-user"></i> Huỳnh Trung</dd>
+                                                    <dd class="hz-agent-mobile"><i class="fa fa-phone"></i><span class="">0933994418</span></dd>
+                                                    <dd class="hz-agent-mobile"><i class="fa fa-phone"></i><span class="">0901261232</span></dd>
+                                                    <dd><a href="" class="view">Thông tin liên hệ</a></dd>
+                                                </dl>
+                                            </div>*@
+                                        <div class="media-body">
+                                            <dl>
+                                                <dd><i class="fa fa-user"></i> Huỳnh Trung</dd>
+                                                <dd>
+                                                    <span class="hz-agent-phone">
+                                                        <i class="fa fa-phone"></i>
+                                                        <span class="">0933 994 418</span>
+                                                    </span>
+                                                    <span class="hz-agent-mobile">
+                                                        <i class="fa fa-mobile"></i>
+                                                        <span class="">0901 261 232</span>
+                                                    </span>
+                                                </dd>
+                                                <dd>
+                                                    <span>
+                                                        <a class="btn-twitter" target="_blank" href="#">
+                                                            <i class="fa fa-twitter-square"></i>
+                                                            <span>Twitter</span>
+                                                        </a>
+                                                    </span>
+                                                    <span>
+                                                        <a class="btn-googleplus" target="_blank" href="#">
+                                                            <i class="fa fa-google-plus-square"></i>
+                                                            <span>Google Plus</span>
+                                                        </a>
+                                                    </span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="detail-title-inner">
+                                        <h4 class="title-inner">Liên hệ với chúng tôi</h4>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="form_messages_success" style="color:green;font-weight:bold;"></div>
+                                            <div class="form_messages_error" style="color:red;font-weight:bold;"></div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <input class="form-control" id="txtName" name="name" value="" type="text" placeholder="Họ và Tên">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <input class="form-control" id="txtPhone" name="phone" value="" type="text" placeholder="Phone">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <input class="form-control" id="txtEmail" name="email" value="" type="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="txtMessage" name="message" rows="6" placeholder="Vui lòng điền thông tin liên hệ"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12"></div>
+
+                                    </div>
+                                    <button class="btn btn-secondary" id="btnSendFeedback">Gửi yêu cầu</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end container-content -->
+                @await Component.InvokeAsync("Sidebar")
+            </div>
+        </div>
+    </section>
+    <!--.container Start in header-->
+</div>
+
+<!--start lightbox-->
+<div id="lightbox-popup-main" class="fade">
+    <div class="lightbox-popup">
+        <div class="popup-inner">
+            <div class="lightbox-left">
+
+                <div class="lightbox-header">
+                    <div class="header-title">
+                        <p>
+                            <span>
+                                <img src="//29135-108621-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/logo-houzez-white.png" alt="Luxury apartment bay view" width="86" height="13">
+                            </span>
+                            <span class="hidden-xs">
+                                @Model.ProjectVM.Name - @Model.ProjectVM.Address
+                            </span>
+                        </p>
+                    </div>
+                    <div class="header-actions">
+                        <ul class="actions">
+                            <li class="share-btn">
+
+                                <div class="share_tooltip tooltip_left fade">
+                                    <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://twitter.com/intent/tweet?text=Luxury+apartment+bay+view&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&via=Houzez" onclick="if(!document.getElementById('td_social_networks_buttons')){window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;}"><i class="fa fa-twitter"></i></a>
+
+                                    <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&amp;media=http://houzez03.favethemes.com/wp-content/uploads/2016/03/chicago-05-1024x688.jpg" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-pinterest"></i></a>
+
+                                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F&title=Luxury+apartment+bay+view&source=http%3A%2F%2Fhouzez03.favethemes.com%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+                                    <a href="http://plus.google.com/share?url=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F" onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-google-plus"></i></a>
+                                    <a href="mailto:example.com?subject=Luxury+apartment+bay+view&body=http%3A%2F%2Fhouzez03.favethemes.com%2Fproperty%2Fluxury-apartment-bay-view%2F"><i class="fa fa-envelope"></i></a>
+                                </div>
+                                <span title="" data-placement="right" data-toggle="tooltip" data-original-title="share"><i class="fa fa-share-alt"></i></span>
+                            </li>
+                            <li class="favt-btn">
+                                <span><span class="add_fav" data-placement="right" data-toggle="tooltip" data-original-title="Favorite" data-propid="341"><i class="fa fa-heart-o"></i></span></span>
+                            </li>
+                            <li class="lightbox-expand visible-xs compress">
+                                <span><i class="fa fa-envelope"></i></span>
+                            </li>
+                            <li class="lightbox-close">
+                                <span><i class="fa fa-close"></i></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-area">
+                    <div class="slider-placeholder">
+                        <div class="loader-inner">
+                            <span class="fa fa-spin fa-spinner"></span> Loading Slider...
+                        </div>
+                    </div>
+                    <div class="expand-icon lightbox-expand hidden-xs"></div>
+                    <div class="gallery-inner">
+                        <div class="lightbox-slide slide-animated owl-carousel owl-theme">
+                            @foreach (var productImage in Model.ProjectImageVMs)
+                            {
+                                <div class="item">
+                                    <img width="1170" height="738" src="@productImage.Path" class="attachment-houzez-imageSize1170_738 size-houzez-imageSize1170_738" alt="" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="lightbox-slide-nav visible-xs">
+                        <button class="lightbox-arrow-left lightbox-arrow"><i class="fa fa-angle-left"></i></button>
+                        <p class="lightbox-nav-title">
+                            @Model.ProjectVM.Name - @Model.ProjectVM.Address
+                        </p>
+                        <button class="lightbox-arrow-right lightbox-arrow"><i class="fa fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="lightbox-right fade in">
+                <div class="lightbox-header hidden-xs">
+                    <div class="header-title">
+                        <p> @*$987,000*@</p>
+                    </div>
+                    <div class="header-actions">
+                        <ul class="actions">
+                            <li class="lightbox-close">
+                                <span><i class="fa fa-close"></i></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="agent-area">
+                    <div class="form-small">
+                        <div class="media agent-media">
+                            <div class="media-left">
+                                <a href="http://houzez03.favethemes.com/agent/brittany-watkins/">
+                                    <img src="//29135-108621-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/02/agent-2-150x150.jpg" alt="Brittany Watkins" width="75" height="75">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <dl>
+                                    <dd><i class="fa fa-user"></i> Huỳnh Trung</dd>
+                                    <dd class="hz-agent-mobile"><i class="fa fa-phone"></i><span class="">0933994418</span></dd>
+                                    <dd class="hz-agent-mobile"><i class="fa fa-phone"></i><span class="">0901261232</span></dd>
+                                    <dd><a href="" class="view">Thông tin liên hệ</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" id="Name" name="name" value="" type="text" placeholder="Họ và Tên">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="Phone" name="phone" value="" type="text" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="Email" name="email" value="" type="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="Message" name="message" rows="6" placeholder="Vui lòng điền thông tin liên hệ"></textarea>
+                        </div>
+                        <button class="btn btn-secondary btn-block" id="">Gửi yêu cầu</button>
+                        @*<div class="form_messages_success" style="color:green;font-weight:bold;"></div>
+                            <div class="form_messages_error" style="color:red;font-weight:bold;"></div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Lightbox-->

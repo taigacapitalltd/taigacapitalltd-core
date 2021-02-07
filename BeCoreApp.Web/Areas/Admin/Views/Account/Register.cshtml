@@ -1,0 +1,107 @@
+﻿@model RegisterViewModel
+@{
+    Layout = "_LayoutAccount";
+}
+
+@section Styles{}
+
+@section Scripts{
+    <script src="~/admin-app/controllers/account/register.js" asp-append-version="true"></script>
+    <script>
+        var register = new registerController();
+        register.initialize();
+    </script>
+}
+<style>
+    .form-control-label{
+        display:flex;
+    }
+</style>
+
+<div class="page">
+    <div class="">
+        <div class="container">
+            <div class="">
+                <div class="col col-login mx-auto">
+                    <div class="text-center">
+                        <img src="~/admin-side/dashlot-admin/HTML//assets/images/brand/logo1.png" class="header-brand-img dark-theme mx-auto text-center h-100 mb-5  " alt="Dashlot logo">
+                    </div>
+                </div>
+                <div class="col-xl-4 justify-content-center mx-auto text-center">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                @*<div class="col col-login mx-auto mt-4">
+                                    <div class="text-center">
+                                        <img src="~/admin-side/dashlot-admin/HTML/assets/images/brand/logo2.jpg" class="header-brand-img desktop-logo h-100 mb-3" alt="Dashlot logo" style="width:240px;" />
+                                    </div>
+                                </div>*@
+                                <div class="card-body p-6 about-con pabout">
+                                    <div class="card-title text-center  mb-4">ĐĂNG KÝ</div>
+                                    <form>
+
+
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Họ & Tên</label>
+                                            <input class="form-control" type="text" id="txtFullName" name="txtFullName">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Nhà Tài Trợ</label>
+                                            <input class="form-control" type="text" value="@Model.SponsorNo" id="txtSponsorNo" name="txtSponsorNo">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Tên Đăng Nhập</label>
+                                            <input class="form-control" type="text" id="txtUserName" name="txtUserName">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Mật Khẩu</label>
+                                            <input class="form-control" type="password" id="txtPassword" name="txtPassword">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Xác Nhận Mật Khẩu</label>
+                                            <input class="form-control" type="password" id="txtConfirmPassword" name="txtConfirmPassword">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Email</label>
+                                            <input class="form-control" type="text" id="txtEmail" name="txtEmail">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số Điện Thoại</label>
+                                            <input class="form-control" type="text" id="txtPhoneNumber" name="txtPhoneNumber">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số CMND</label>
+                                            <input class="form-control" type="text" id="txtCMND" name="txtCMND">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="custom-control custom-checkbox ">
+                                                <input type="checkbox" id="cbAgree" class="custom-control-input ">
+                                                <span class="custom-control-label">Tôi đồng ý với các điều khoản, điều kiện</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-footer mt-2">
+                                            <a class="btn btn-success btn-block" id="btnRegister">Đăng ký</a>
+                                        </div>
+                                    </form>
+                                    <div class="text-center  mt-3 mb-0">
+                                        Bạn đã có tài khoản? <a href="/Admin/Account/Login" class="text-primary">Đăng nhập</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

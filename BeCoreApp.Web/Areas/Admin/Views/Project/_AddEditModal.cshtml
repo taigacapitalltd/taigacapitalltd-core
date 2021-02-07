@@ -1,0 +1,171 @@
+﻿<div id="modal-add-edit" class="modal fade" tabindex="-1" data-backdrop="static"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title badge badge-secondary-light" id="exampleModalLabel">
+                    Thêm & cập nhật dự án
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmMaintainance">
+
+                    <div class="form-group m-form__group">
+                        <input type="hidden" id="hidId" value="0" />
+                        <label for="txtName" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Tên dự án</label>
+                        <input type="text" id="txtName" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Loại dự án</label>
+                        <div class="m-select2 m-select2--air">
+                            @Html.DropDownList("ProjectCategoryId", null, "", new { @class = "form-control m-select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Nhà Thầu</label>
+                        <div class="m-select2 m-select2--air">
+                            @Html.DropDownList("EnterpriseId", null, "", new { @class = "form-control m-select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Tỉnh/Thành Phố</label>
+                        <div class="m-select2 m-select2--air">
+                            @Html.DropDownList("ProvinceId", null, "", new { @class = "form-control m-select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Quận/Huyện</label>
+                        <div class="m-select2 m-select2--air" id="boxDllDistrictId">
+                            @Html.DropDownList("DistrictId", null, "", new { @class = "form-control m-select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Xã/Phường</label>
+                        <div class="m-select2 m-select2--air" id="boxDllWardId">
+                            @Html.DropDownList("WardId", null, "", new { @class = "form-control m-select2" })
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtAddress" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Địa chỉ</label>
+                        <input type="text" id="txtAddress" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtImage" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Ảnh bìa</label>
+                        <div class="input-group">
+                            <input type="text" id="txtImage" class="form-control m-input m-input--air" />
+                            <input type="file" id="fileInputImage" style="display:none" />
+                            <span class="input-group-btn">
+                                <input type="button" id="btnSelectImg" class="btn btn-default" value="Browser" />
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtTotalArea" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Tổng diện tích</label>
+                        <input type="text" id="txtTotalArea" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtAreageBuild" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Diện tích xây dựng</label>
+                        <input type="text" id="txtAreageBuild" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtProgressBuild" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Tiến độ thực hiện</label>
+                        <input type="text" id="txtProgressBuild" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtProjectScale" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Quy mô dự án</label>
+                        <input type="text" id="txtProjectScale" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtHandOverTheHouse" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Năm bàn giao nhà</label>
+                        <input type="text" id="txtHandOverTheHouse" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtVideo" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Video</label>
+                        <input type="text" id="txtVideo" class="form-control m-input m-input--air">
+                    </div>
+
+
+                    <div class="form-group m-form__group">
+                        <label for="txtContent" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Tổng quan</label>
+                        <textarea id="txtContent" rows="20" class="form-control m-input m-input--air"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtLocation" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Vị Trí</label>
+                        <textarea id="txtLocation" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtInfrastructure" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Hạ tầng</label>
+                        <textarea id="txtInfrastructure" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtOverallDiagram" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Sơ đồ tổng thể</label>
+                        <textarea id="txtOverallDiagram" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtGroundDesign" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Thiết kế mặt bằng</label>
+                        <textarea id="txtGroundDesign" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtFinancialSupport" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Hỗ trợ tài chính</label>
+                        <textarea id="txtFinancialSupport" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtSeoPageTitle" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Seo Page Title</label>
+                        <input type="text" id="txtSeoPageTitle" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtSeoKeywords" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Seo Keywords</label>
+                        <input type="text" id="txtSeoKeywords" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label for="txtSeoDescription" class="form-control-label"><span class="m-badge m-badge--warning m-badge--dot"></span> Seo Description</label>
+                        <input type="text" id="txtSeoDescription" class="form-control m-input m-input--air">
+                    </div>
+
+                    <div class="form-group m-form__group">
+                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand m--margin-right-10">
+                            <input type="checkbox" checked="checked" id="ckStatus">
+                            Trạng thái
+                            <span></span>
+                        </label>
+
+                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                            <input type="checkbox" checked="checked" id="ckShowHome">
+                            Hiển thị trang chủ
+                            <span></span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCancel" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                <button type="button" id="btnSave" class="btn btn-success">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Cài đặt tiền thưởng";
+}
+@section Scripts{
+    <script src="~/admin-app/controllers/app-user-bonus/index.js" asp-append-version="true"></script>
+    <script>
+        var userBonusObj = new UserBonusController();
+        userBonusObj.initialize();
+    </script>
+}
+@section Styles{
+}
+<!-- BEGIN: Subheader -->
+@await Component.InvokeAsync("SubHeader")
+<!-- END: Subheader -->
+<div class="m-content">
+    <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        @ViewData["Title"]
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body">
+            <!--begin::Section-->
+            <div class="m-section">
+                <div class="m-section__content">
+                    <div class="table-responsive">
+                        <table class="table m-table m-table--head-separator-primary">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Điểm Thưởng</th>
+                                    <th>Tuyển Dụng</th>
+                                    <th>Tuyến Trên</th>
+                                    <th>Lên Cấp</th>
+                                    <th width="100">Cấp Độ</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Ngày Tạo</th>
+                                    <th>Ngày Cập Nhật</th>
+                                    <th width="110">Chức Năng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbl-content"></tbody>
+                        </table>
+                    </div>
+                    @await Component.InvokeAsync("Paging")
+                </div>
+            </div>
+            <!--end::Section-->
+        </div>
+    </div>
+</div>
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{Id}}</td>
+        <td>{{RewardPoint}}</td>
+        <td>{{RecruitingBonus}}</td>
+        <td>{{UplineFund}}</td>
+        <td>{{MoneyReceive}}</td>
+        <td>{{LevelStrategyName}}</td>
+        <td>{{{Status}}}</td>
+        <td>{{DateCreated}}</td>
+        <td>{{DateModified}}</td>
+        <td>
+            <a href="#" data-id="{{Id}}" class="btn-edit m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"><i class="la la-edit"></i></a>
+        </td>
+    </tr>
+</script>
+
+@Html.Partial("_AddEditModal")

@@ -1,0 +1,114 @@
+///////////////////////////////////////////////
+
+Updated Date : November 25th 2019
+Version: V.1.4
+-------------------------------------------------
+Updates : 
+1. Left menu hover issue Fixed
+
+2. Left menu Transition Effect Improved
+
+3. Modal popup issue fixed
+
+
+/////////////////////////////////////////
+
+1.Left menu hover issue Fixed
+
+/////////////////////////////////////////
+
+Step1: Open the files "icon-sidemenu.css" and "closed-sidemenu.css" and go to near line number of 597 these file are located in "assets/plugins/sidemenu" 
+
+Previous:
+	.sidebar-mini.sidenav-toggled .slide:hover .slide-menu {
+		max-height: 300vh;
+		opacity:0;
+		visibility: visible;
+		z-index: 10;
+	}
+	
+	
+Step2: Remove the css in "icon-sidemenu.css"  and "closed-sidemenu.css"
+
+	/*.sidebar-mini.sidenav-toggled .slide:hover .slide-menu {
+		max-height: 300vh;
+		opacity:0;
+		visibility: visible;
+		z-index: 10;
+	}*/ Remove this Css
+	
+	
+
+/////////////////////////////////////////
+	
+2.Transition Effect Fixed
+
+/////////////////////////////////////////
+
+
+Step1: Open the files "icon-sidemenu.css" and "closed-sidemenu.css" and go to near line number of 390 these file are located in "assets/plugins/sidemenu" 
+
+Previous:
+	.slide.is-expanded .slide-menu {
+		max-height: 300vh;
+		-webkit-transition: max-height 1s ease;
+		-o-transition: max-height 1s ease;
+		transition: max-height 1s ease;
+		transition: all 0.5s;
+	}
+	.slide.is-expanded .angle {
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.slide-menu {
+		max-height: 0;
+		overflow: hidden;
+		-webkit-transition: max-height 0.9s ease;
+		-o-transition: max-height 0.9s ease;
+		transition: max-height 0.9s ease;
+		transition: all 0.9s;
+		margin-left: 32px;
+	}
+	
+	
+Step2: Update the css in "icon-sidemenu.css"  and "closed-sidemenu.css"
+
+	.slide.is-expanded .slide-menu {
+		max-height: 300vh;
+		-webkit-transition: max-height 2s ease;
+		-o-transition: max-height 2s ease;
+		transition: max-height 2s ease;
+	}
+	.slide.is-expanded .angle {
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.slide-menu {
+		max-height: 0;
+		overflow: hidden;
+		-webkit-transition: max-height 0.5s ease;
+		-o-transition: max-height 0.5s ease;
+		transition: max-height 0.5s ease;
+		margin-left: 32px;
+	}
+
+
+/////////////////////////////////////////
+	
+3.Modal popup issue fixed
+
+/////////////////////////////////////////
+
+
+Step1: Open the modal.html page and go to near line number 1696
+
+	Previous:
+		<div class="modal fade auto-off modal-bottom-left "  id="positionModal11"  tabindex="-1" role="dialog" aria-labelledby="positionModal11" aria-hidden="true">
+		
+		
+Step2: Update the ids in modal.html file 
+
+	Updated:
+		<div class="modal fade auto-off modal-bottom-left "  id="positionModal4"  tabindex="-1" role="dialog" aria-labelledby="positionModal4" aria-hidden="true">

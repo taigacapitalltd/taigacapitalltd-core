@@ -1,0 +1,341 @@
+﻿@model BeCoreApp.Models.ProductViewModels.DetailViewModel
+@{
+    ViewData["Title"] = Model.Product.Name;
+    ViewData["MetaKeyword"] = Model.Product.SeoKeywords;
+    ViewData["MetaDescription"] = Model.Product.SeoDescription;
+}
+<div id="tbay-main-content">
+    <section id="tbay-breadscrumb" class="tbay-breadscrumb">
+        <div class="container">
+            <div class="breadscrumb-inner">
+                <ol class="tbay-woocommerce-breadcrumb breadcrumb">
+                    <li><a href="/">Trang Chủ</a></li>
+                    <li><a href="/">Sản Phẩm</a></li>
+                    <li>Chi Tiết</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section id="main-container" class="main-content container">
+        <div class="row">
+            <div id="main-content" class="singular-shop col-xs-12 col-xs-12 col-md-12 col-lg-9 pull-right">
+                <div id="primary" class="content-area">
+                    <div id="content" class="site-content" role="main">
+                        <div class="woocommerce-notices-wrapper"></div>
+                        <div class="style-vertical product type-product status-publish first instock product_cat-fresh-meat product_cat-milk-cream product_cat-ocean-foods product_tag-food-theme product_tag-organic-food product_tag-organic-theme has-post-thumbnail sale featured taxable shipping-taxable purchasable product-type-simple">
+                            <div class="row">
+                                <div class="image-mains">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <p class="rs-p-wp-fix"></p>
+                                            <rs-module-wrap id="rev_slider_12_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+                                                <rs-module id="rev_slider_12_1" style="display:none;" data-version="6.0.9">
+                                                    <rs-slides>
+                                                        @foreach (var item in Model.Product.ProductImages)
+                                                        {
+                                                            <rs-slide data-key="rs-26" data-title="Slide" data-thumb="//demo.thembay.com/greenmart/wp-content/uploads/revslider/slider-home-5/slider-41-100x50.jpg" data-anim="ei:d,d,d,d,d,d,d,d,d;eo:d,d,d,d,d,d,d,d,d;s:d,d,d,d,d,d,d,d,d,d;r:0,0,0,0,0,0,0,0,0;t:3dcurtain-horizontal,3dcurtain-vertical,cube,cube-horizontal,incube,incube-horizontal,turnoff,turnoff-vertical,papercut,flyin;sl:d,d,d,d,d,d,d,d,d,d;">
+                                                                <img src="@item.Path" title="slider-41.jpg" width="870" height="490" class="rev-slidebg" data-no-retina>
+                                                            </rs-slide>
+                                                        }
+                                                    </rs-slides>
+                                                    <rs-progress class="rs-bottom" style="visibility: hidden !important;"></rs-progress>
+                                                </rs-module>
+                                                <script type="text/javascript">
+                                                    setREVStartSize({ c: 'rev_slider_12_1', rl: [1240, 1024, 778, 480], el: [460, 700, 600, 300], gw: [570, 1024, 778, 480], gh: [460, 700, 600, 300], layout: 'fullwidth', mh: "0" });
+                                                    var revapi12,
+                                                        tpj;
+                                                    jQuery(function () {
+                                                        tpj = jQuery;
+                                                        if (tpj("#rev_slider_12_1").revolution == undefined) {
+                                                            revslider_showDoubleJqueryError("#rev_slider_12_1");
+                                                        } else {
+                                                            revapi12 = tpj("#rev_slider_12_1").show().revolution({
+                                                                jsFileLocation: "//demo.thembay.com/greenmart/wp-content/plugins/revslider/public/assets/js/",
+                                                                visibilityLevels: "1240,1024,778,480",
+                                                                gridwidth: "570,1024,778,480",
+                                                                gridheight: "460,700,600,300",
+                                                                minHeight: "",
+                                                                spinner: "spinner0",
+                                                                editorheight: "460,700,600,300",
+                                                                responsiveLevels: "1240,1024,778,480",
+                                                                disableProgressBar: "on",
+                                                                navigation: {
+                                                                    mouseScrollNavigation: false,
+                                                                    onHoverStop: false,
+                                                                    arrows: {
+                                                                        enable: true,
+                                                                        style: "revo-tbay-arrows",
+                                                                        hide_onleave: true,
+                                                                        left: {
+
+                                                                        },
+                                                                        right: {
+
+                                                                        }
+                                                                    }
+                                                                },
+                                                                fallbacks: {
+                                                                    allowHTML5AutoPlayOnAndroid: true
+                                                                },
+                                                            });
+                                                        }
+
+                                                    });
+                                                </script>
+                                                <script>
+                                                    var htmlDivCss = unescape("%23rev_slider_12_1_wrapper%20.revo-tbay-arrows.tparrows%20%7B%0A%20%20cursor%3Apointer%3B%0A%20%20background%3A%23ffffff%3B%0A%20%20width%3A45px%3B%0A%20%20height%3A45px%3B%0A%20%20position%3Aabsolute%3B%0A%20%20display%3Ablock%3B%0A%20%20z-index%3A1000%3B%0A%20%20border%3A%201px%20solid%20%23e5e5e5%3B%0A%20%20border-radius%3A%205px%3B%0A%20%20%20%20-webkit-border-radius%3A%205px%3B%0A%20%20%20%20-moz-border-radius%3A%205px%3B%0A%20%20%20%20-ms-border-radius%3A%205px%3B%0A%20%20%20%20-o-border-radius%3A%205px%3B%0A%7D%0A%23rev_slider_12_1_wrapper%20.revo-tbay-arrows.tparrows%3Abefore%20%7B%0A%20%20font-family%3A%20IcoFont%3B%0A%09font-size%3A%2020px%3B%0A%09color%3A%23000000%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2045px%3B%0A%09text-align%3A%20center%3B%0A%20%20%09-webkit-transition%3A%20all%20.4s%3B%0A%20%20-moz-transition%3A%20all%20.4s%3B%0A%20%20-o-transition%3A%20all%20.4s%3B%0A%20%20transition%3A%20all%20.4s%3B%0A%20%20border-radius%3A%205px%3B%0A%20%20%20%20-webkit-border-radius%3A%205px%3B%0A%20%20%20%20-moz-border-radius%3A%205px%3B%0A%20%20%20%20-ms-border-radius%3A%205px%3B%0A%20%20%20%20-o-border-radius%3A%205px%3B%0A%7D%0A%23rev_slider_12_1_wrapper%20.revo-tbay-arrows.tparrows.tp-leftarrow%3Abefore%20%7B%0A%20%20content%3A%20%27%5Ceab5%27%3B%0A%7D%0A%23rev_slider_12_1_wrapper%20.revo-tbay-arrows.tparrows.tp-rightarrow%3Abefore%20%7B%0A%20%20content%3A%20%27%5Ceab8%27%3B%0A%7D%0A%23rev_slider_12_1_wrapper%20.revo-tbay-arrows.tparrows%3Ahover%3Abefore%20%7B%0A%20%20color%3A%23ffffff%3B%0A%20%20background%3A%2386bc42%3B%0A%20%20%0A%7D%0A");
+                                                    var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+                                                    if (htmlDiv) {
+                                                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                                                    } else {
+                                                        var htmlDiv = document.createElement('div');
+                                                        htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+                                                        document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+                                                    }
+                                                </script>
+                                            </rs-module-wrap>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="information">
+                                    <div class="summary entry-summary  has-buy-now">
+                                        <h1 class="product_title entry-title">@Model.Product.Name</h1>
+                                        <div class="woocommerce-product-rating">
+                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                                <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4</span> customer ratings</span>
+                                            </div>
+                                            <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span class="count">@Model.Product.ViewCount</span> lượt xem)</a>
+                                            <span class="rate-sold">
+                                                <span class="count">60</span>
+                                                <span class="sold-text">lượt mua</span>
+                                            </span>
+                                        </div>
+
+                                        <p class="price">
+                                            @if (Model.Product.PromotionPrice.HasValue && Model.Product.PromotionPrice.Value > 0)
+                                            {
+                                                <del>
+                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", Model.Product.Price)đ</span>
+                                                </del>
+                                                <ins>
+                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", Model.Product.PromotionPrice)đ</span>
+                                                </ins>
+                                            }
+                                            else
+                                            {
+                                                <ins>
+                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", Model.Product.Price)đ</span>
+                                                </ins>
+                                            }
+                                        </p>
+
+                                        <form class="cart" method="post" enctype='multipart/form-data'>
+                                            <div class="box-quantity">
+                                                <span class="title-qty">Số lượng</span>
+                                                <div class="quantity">
+                                                    <input class="minus" type="button" value="-">
+                                                    <input type="number" class="input-text qty text" data-step="1" data-min="1" data-max="" name="quantity"
+                                                           value="1" title="Qty" size="4" pattern="[0-9]*" data-inputmode="numeric" aria-labelledby="" />
+                                                    <input class="plus" type="button" value="+">
+                                                </div>
+                                            </div>
+                                            <button type="submit" name="add-to-cart" value="79" class="single_add_to_cart_button button alt">Thêm</button>
+                                            <button class="tbay-buy-now button">Mua ngay</button>
+                                        </form>
+
+                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-79">
+                                            <div class="yith-wcwl-add-button show" style="display:block">
+                                                <a href="/greenmart/product/tescot-durian/?style_single_product=vertical&#038;add_to_wishlist=79" rel="nofollow" data-product-id="79" data-product-type="simple" class="add_to_wishlist">
+                                                    <i class="icofont-heart-alt"></i><span>Wishlist</span>
+                                                </a>
+                                                <img src="https://demo-10aba.kxcdn.com/greenmart/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
+                                            </div>
+
+                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
+                                                <span class="feedback">Product added!</span>
+                                                <a href="https://demo.thembay.com/greenmart/wishlist/" rel="nofollow">
+                                                    <i class="icofont-heart-alt"></i><span>Wishlist</span>
+                                                </a>
+                                            </div>
+
+                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
+                                                <span class="feedback">The product is already in the wishlist!</span>
+                                                <a href="https://demo.thembay.com/greenmart/wishlist/" rel="nofollow">
+                                                    <i class="icofont-heart-alt"></i><span>Wishlist</span>
+                                                </a>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                            <div class="yith-wcwl-wishlistaddresponse"></div>
+                                        </div>
+
+                                        <div class="clear"></div>
+                                        <a href="https://demo.thembay.com/greenmart?action=yith-woocompare-add-product&id=79" class="compare button" data-product_id="79" rel="nofollow">Compare</a><div class="product_meta">
+                                            <span class="posted_in">Loại: <a href="#" rel="tag">@Model.Product.BlogCategory.Name</a></span>
+                                            <span class="yith-wcbr-brands">
+                                                Hình Thức: <span itemprop="brand"><a href="#" rel="tag"><strong>@Model.Product.ProductType.Name</strong></a></span>
+                                            </span>
+                                            <div class="tagcloud">
+                                                <span class="tagged_as">
+                                                    Tags:
+                                                    @foreach (var tag in Model.ProductTags)
+                                                    {
+                                                        var tagDetailUrl = $"/chu-de-san-pham/{tag.Id}.html";
+                                                        <a rel="tag" href="@tagDetailUrl">@tag.Name</a>
+                                                    }
+                                                </span>
+                                            </div>
+                                            <span class="yith-wcbr-brands-logo"></span>
+                                        </div>
+                                        <div class="tbay-woo-share">
+                                            <div class="addthis_inline_share_toolbox"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="woo-after-single-product-summary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="woo-after-single-content">
+                                <div class="wc-tabs-wrapper" id="woocommerce-tabs" data-ride="carousel">
+                                    <div class="panel-group accordion-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel">
+                                            <div class="tabs-title" role="tab" id="heading-1">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-tab-1" aria-expanded="true" aria-controls="collapse-tab-1" class="">
+                                                    Thông Tin Chi Tiết Sản Phẩm <i class="fa radius-x fa-angle-up"></i>
+                                                </a>
+                                            </div>
+                                            <div id="collapse-tab-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-1" aria-expanded="true" style="">
+                                                <div class="entry-content">
+                                                    @Html.Raw(Model.Product.MildContent)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="tabs-title" role="tab" id="heading-2">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-tab-2" aria-expanded="false" aria-controls="collapse-tab-2" class="collapsed">
+                                                    Phản Hồi Khách Hàng <i class="fa radius-x fa-angle-down"></i>
+                                                </a>
+                                            </div>
+                                            <div id="collapse-tab-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2" aria-expanded="false" style="height: 20px;">
+                                                <div class="entry-content">
+                                                    Blank
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="related products widget ">
+                                    <h3 class="widget-title"><span>Sản phẩm liên quan</span></h3>
+                                    <div class="owl-carousel products related" data-navleft="icofont-simple-left" data-navright="icofont-simple-right" data-items="3" data-large="3" data-medium="3" data-smallmedium="2" data-extrasmall="2" data-carousel="owl" data-pagination="false" data-nav="true" data-loop="false" data-auto="false" data-autospeed="" data-uncarouselmobile="false">
+
+                                        @foreach (var product in Model.RelatedProducts)
+                                        {
+                                            var productDetailUrl = $"/{product.SeoAlias}-p.{product.Id}.html";
+                                            <div class="item">
+                                                <div class="products-grid product">
+                                                    <div class="product-block grid ">
+                                                        <div class="product-content">
+                                                            <div class="block-inner">
+                                                                <figure class="image">
+                                                                    <a title="@product.Name" href="@productDetailUrl" class="product-image">
+                                                                        @if (product.ProductImages.Count < 0)
+                                                                        {
+                                                                            <img width="405" height="330" src="@product.ProductImages[0].Path" class="attachment-shop_catalog image-effect wp-post-image" alt="@product.Name" />
+                                                                            <img width="405" height="330" src="@product.ProductImages[1].Path" class="image-hover wp-post-image" alt="@product.Name" />
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <img width="405" height="330" src="@product.Image" class="attachment-shop_catalog image-effect wp-post-image" alt="@product.Name" />
+                                                                            <img width="405" height="330" src="@product.Image" class="image-hover wp-post-image" alt="@product.Name" />
+                                                                        }
+
+                                                                        @if (product.PromotionPrice.HasValue && product.PromotionPrice.Value > 0)
+                                                                        {
+                                                                            <span class="onsale">
+                                                                                <span class="featured not-sale">- @Convert.ToInt32((product.Price - product.PromotionPrice) / product.Price * 100)%</span>
+                                                                            </span>
+                                                                        }
+                                                                    </a>
+                                                                    <ul class="show-brand">
+                                                                        @foreach (var productTag in product.ProductTags)
+                                                                        {
+                                                                            var tagDetailUrl = $"/chu-de-san-pham/{productTag.TagId}.html";
+                                                                            <li><a href="@tagDetailUrl">@productTag.Tag.Name</a></li>
+                                                                        }
+                                                                    </ul>
+                                                                </figure>
+                                                            </div>
+                                                            <div class="caption">
+                                                                <div class="meta">
+                                                                    <div class="infor">
+                                                                        <div class="name-subtitle">
+                                                                            <h3 class="name"><a href="@productDetailUrl">@product.Name</a></h3>
+                                                                            <div class="tbay-subtitle">(@product.ProductType.Name)</div>
+                                                                        </div>
+                                                                        <span class="price">
+                                                                            @if (product.PromotionPrice.HasValue && product.PromotionPrice.Value > 0)
+                                                                            {
+                                                                                <del>
+                                                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.Price)đ</span>
+                                                                                </del>
+                                                                                <ins>
+                                                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.PromotionPrice)đ</span>
+                                                                                </ins>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <ins>
+                                                                                    <span class="woocommerce-Price-amount amount">@String.Format("{0:n0}", product.Price)đ</span>
+                                                                                </ins>
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="groups-button clearfix">
+                                                                    <div class="add-cart" title="Add to cart">
+                                                                        <a href="@productDetailUrl" rel="nofollow" class="button product_type_simple product_type_simple">
+                                                                            <i class="icofont-shopping-cart"></i> <span class="title-cart">Chọn sản phẩm</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <a href="@productDetailUrl" class="button yith-wcqv-button tbay-tooltip btn-view-fast-product" data-id="@product.Id" title="Xem nhanh">
+                                                                        <span><i class="icofont-eye-alt"></i></span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-3">
+                <aside class="sidebar sidebar-left">
+                    <aside id="tbay_custom_menu-2" class="widget widget_tbay_custom_menu hidden-xs">
+                        @await Component.InvokeAsync("HomeSidebarMenu")
+                    </aside>
+
+                    <aside id="woocommerce_product_tag_cloud-3" class="widget woocommerce widget_product_tag_cloud">
+                        <h2 class="widget-title">Chủ Đề ( Tags )</h2><div class="tagcloud">
+                            @foreach (var tag in Model.Tags)
+                            {
+                                var tagDetailUrl = $"/chu-de-san-pham/{tag.Id}.html";
+                                <a href="@tagDetailUrl" class="tag-cloud-link" style="font-size: 8pt;">@tag.Name</a>
+                            }
+                        </div>
+                    </aside>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+</div>

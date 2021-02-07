@@ -1,0 +1,243 @@
+﻿@*@using Microsoft.AspNetCore.Identity*@
+@using BeCoreApp.Extensions
+@{
+    //string classActive = "";
+    //string path = @Context.Request.Path;
+    //string url = path.Substring(7);
+    //int sbIndex = url.IndexOf("/");
+    //string controllerName = url.ToLower();
+    //if (sbIndex > 0)
+    //    controllerName = controllerName.Substring(0, sbIndex);
+}
+
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar toggle-sidebar">
+    <div class="app-sidebar__user">
+        <div class="user-body">
+            <img src="~/admin-side/dashlot-admin/HTML/assets/images/users/2.jpg" alt="profile-img" class="rounded-circle w-25">
+        </div>
+        <div class="user-info">
+            <a href="#" class="">
+                <span class="app-sidebar__user-name font-weight-semibold"> Jonathan</span><br>
+                <span class="text-muted app-sidebar__user-designation text-sm">App Developer</span>
+            </a>
+        </div>
+    </div>
+    <ul class="side-menu toggle-menu">
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/homepage.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">CRM</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a class="slide-item" href="index.html"><span>Dashboard</span></a></li>
+                <li><a class="slide-item" href="crm-projects.html"><span>Projects</span></a></li>
+                <li><a class="slide-item" href="crm-project-description.html"><span>Projects description</span></a></li>
+                <li><a class="slide-item" href="crm-clients.html"><span>Clients</span></a></li>
+                <li><a class="slide-item" href="crm-reports.html"><span>Reports</span></a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/bitcoin-logo.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Crypto Currency</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="/admin/home/index" class="slide-item">Dashboard</a></li>
+                <li><a href="crypto-market.html" class="slide-item">Marketcap</a></li>
+                <li><a href="crypto-currency-exchange.html" class="slide-item">Currency Exchang</a></li>
+                <li><a href="crypto-buysell.html" class="slide-item">Buy/Sell</a></li>
+                <li><a href="crypto-wallet.html" class="slide-item">Wallet</a></li>
+                <li><a href="crypto-transcation.html" class="slide-item">Transcation</a></li>
+                <li><a href="crypto-news.html" class="slide-item">News</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/testing.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Analytics</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="analytics.html" class="slide-item">Dashboard</a></li>
+                <li><a href="analytics-customers.html" class="slide-item">Customer</a></li>
+                <li><a href="analytics-reports.html" class="slide-item">Reports</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/shopping-cart.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Ecommerce</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="ecommerce.html" class="slide-item">Dashboard</a></li>
+                <li><a href="ecommerce-products.html" class="slide-item">Products</a></li>
+                <li><a href="ecommerce-products1.html" class="slide-item">Products-style2</a></li>
+                <li><a href="ecommerce-list.html" class="slide-item">Products list</a></li>
+                <li><a href="ecommerce-details.html" class="slide-item">Product details</a></li>
+                <li><a href="ecommerce-cart.html" class="slide-item">Cart</a></li>
+                <li><a href="ecommerce-checkout.html" class="slide-item">Checkout</a></li>
+                <li><a href="ecommerce-invoice.html" class="slide-item">Invoice</a></li>
+                <li><a href="ecommerce-cards.html" class="slide-item">Ecommerce-cards</a></li>
+                <li><a href="product-cards.html" class="slide-item">Product-cards</a></li>
+                <li><a href="product-info.html" class="slide-item">Product-info</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/search.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">UI Elements</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="alert.html" class="slide-item"> Alerts</a></li>
+                <li><a href="buttons.html" class="slide-item">Buttons</a></li>
+                <li><a href="cards.html" class="slide-item">Cards</a></li>
+                <li><a href="cards-draggable.html" class="slide-item">Dragabble cards</a></li>
+                <li><a href="carousel.html" class="slide-item">Carousel</a></li>
+                <li><a href="colors.html" class="slide-item">Colors</a></li>
+                <li><a href="cookies.html" class="slide-item">Cookies</a></li>
+                <li><a href="avatars.html" class="slide-item">Avatars</a></li>
+                <li><a href="dropdown.html" class="slide-item">Drop downs</a></li>
+                <li><a href="chat.html" class="slide-item">Default Chat</a></li>
+                <li><a href="designblocks.html" class="slide-item">Design blocks</a></li>
+                <li><a href="list.html" class="slide-item">List</a></li>
+                <li><a href="tags.html" class="slide-item">Tags</a></li>
+                <li><a href="pagination.html" class="slide-item">Pagination</a></li>
+                <li><a href="navigation.html" class="slide-item">Navigation</a></li>
+                <li><a href="typography.html" class="slide-item">Typography</a></li>
+                <li><a href="breadcrumbs.html" class="slide-item">Breadcrumbs</a></li>
+                <li><a href="badges.html" class="slide-item">Badges</a></li>
+                <li><a href="notify.html" class="slide-item">Notifications</a></li>
+                <li><a href="sweetalert.html" class="slide-item">Sweet alerts</a></li>
+                <li><a href="jumbotron.html" class="slide-item">Jumbotron</a></li>
+                <li><a href="panels.html" class="slide-item">Panels</a></li>
+                <li><a href="thumbnails.html" class="slide-item">Thumbnails</a></li>
+                <li><a href="mediaobject.html" class="slide-item">Media Object</a></li>
+                <li><a href="accordion.html" class="slide-item">Accordions</a></li>
+                <li><a href="tabs.html" class="slide-item">Tabs</a></li>
+                <li><a href="rangeslider.html" class="slide-item">Range slider</a></li>
+                <li><a href="scroll.html" class="slide-item">Content Scroll bar</a></li>
+                <li><a href="modals.html" class="slide-item">Modal</a></li>
+                <li><a href="tooltipandpopover.html" class="slide-item">Tooltip and popover</a></li>
+                <li><a href="progress.html" class="slide-item">Progress</a></li>
+                <li><a href="headers.html" class="slide-item">Headers</a></li>
+                <li><a href="footers.html" class="slide-item">Footers</a></li>
+                <li><a href="loaders.html" class="slide-item">Loaders</a></li>
+                <li><a href="counters.html" class="slide-item">Counters</a></li>
+                <li><a href="rating.html" class="slide-item">Rating</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/writing.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Forms</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="form-elements.html" class="slide-item">Form Elements</a></li>
+                <li><a href="forms.html" class="slide-item">Forms</a></li>
+                <li><a href="advancedforms.html" class="slide-item">Advancedforms</a></li>
+                <li><a href="wysiwyag.html" class="slide-item">Form Editor</a></li>
+                <li><a href="form-wizard.html" class="slide-item">Form Wizard</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/bars-graphic.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Charts</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="chart-chartist.html" class="slide-item">Chart Js</a></li>
+                <li><a href="chart-flot.html" class="slide-item">Flot Charts</a></li>
+                <li><a href="chart-echart.html" class="slide-item">ECharts</a></li>
+                <li><a href="chart-morris.html" class="slide-item">Morris Charts</a></li>
+                <li><a href="chart-nvd3.html" class="slide-item">Nvd3 Charts</a></li>
+                <li><a href="charts.html" class="slide-item">C3 Bar Charts</a></li>
+                <li><a href="chart-line.html" class="slide-item">C3 Line Charts</a></li>
+                <li><a href="chart-donut.html" class="slide-item">C3 Donut Charts</a></li>
+                <li><a href="chart-pie.html" class="slide-item">C3 Pie charts</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/layers.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Pages</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="profile.html" class="slide-item">Profile</a></li>
+                <li><a href="editprofile.html" class="slide-item">Edit Profile</a></li>
+                <li><a href="empty.html" class="slide-item">Empty Page</a></li>
+                <li><a href="gallery.html" class="slide-item">Gallery</a></li>
+                <li><a href="about.html" class="slide-item">About us</a></li>
+                <li><a href="services.html" class="slide-item">Services</a></li>
+                <li><a href="faq.html" class="slide-item">FAQS</a></li>
+                <li><a href="terms.html" class="slide-item">Terms</a></li>
+                <li><a href="invoice.html" class="slide-item">Invoice</a></li>
+                <li><a href="pricing.html" class="slide-item">Pricing Tables</a></li>
+                <li><a href="blog.html" class="slide-item">Blog</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/calendar.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Components</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="widgets.html" class="slide-item">Widgets</a></li>
+                <li><a href="maps.html" class="slide-item">Map</a></li>
+                <li><a href="calendar-styles.html" class="slide-item">Calendar</a></li>
+                <li><a href="contact-styles.html" class="slide-item">Contact-styles</a></li>
+                <li><a href="caltoaction.html" class="slide-item">Cal-to-actions</a></li>
+                <li><a href="users-list.html" class="slide-item">UserList</a></li>
+                <li><a href="timeline.html" class="slide-item">Timeline</a></li>
+                <li><a href="ribbons.html" class="slide-item">Ribbons</a></li>
+                <li><a href="testimonials.html" class="slide-item">Testimonials</a></li>
+                <li><a href="tables.html" class="slide-item">Tables</a></li>
+                <li><a href="images-comparison.html" class="slide-item">Images-comparison</a></li>
+                <li><a href="newsticker.html" class="slide-item">Newsticker</a></li>
+                <li><a href="newsletter.html" class="slide-item">Newsletter</a></li>
+                <li><a href="parallax.html" class="slide-item">Parallax</a></li>
+                <li><a href="portfolio.html" class="slide-item">Portfolio</a></li>
+                <li><a href="search.html" class="slide-item">Search</a></li>
+                <li><a href="user-cards.html" class="slide-item">User-cards</a></li>
+                <li><a href="videos.html" class="slide-item">Videos</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/happy.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Icons</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="icons.html" class="slide-item">Font Awesome</a></li>
+                <li><a href="icons2.html" class="slide-item">MaterialDesign</a></li>
+                <li><a href="icons3.html" class="slide-item">Simpleline</a></li>
+                <li><a href="icons4.html" class="slide-item">Feather</a></li>
+                <li><a href="icons5.html" class="slide-item">Ionic</a></li>
+                <li><a href="icons6.html" class="slide-item">Flag</a></li>
+                <li><a href="icons7.html" class="slide-item">Pe7</a></li>
+                <li><a href="icons8.html" class="slide-item">Themify</a></li>
+                <li><a href="icons9.html" class="slide-item">Typicons</a></li>
+                <li><a href="icons10.html" class="slide-item">Weather</a></li>
+            </ul>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><span class="icon-menu-img"><img src="~/admin-side/dashlot-admin/HTML/assets/images/svgs/login.svg" class="side_menu_img svg-1" alt="image"></span><span class="side-menu__label">Custom Pages</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="login.html" class="slide-item">Login</a>
+                <li>
+                <li><a href="register.html" class="slide-item">Register</a>
+                <li>
+                <li><a href="forgot-password.html" class="slide-item">Forgot Password</a>
+                <li>
+                <li><a href="lockscreen.html" class="slide-item">Lock screen</a>
+                <li>
+                <li><a href="construction.html" class="slide-item">Under Construction</a>
+                <li>
+                <li><a href="400.html" class="slide-item">400</a>
+                <li>
+                <li><a href="401.html" class="slide-item">401</a>
+                <li>
+                <li><a href="403.html" class="slide-item">403</a>
+                <li>
+                <li><a href="404.html" class="slide-item">404</a>
+                <li>
+                <li><a href="500.html" class="slide-item">500</a>
+                <li>
+                <li><a href="503.html" class="slide-item">503</a>
+                <li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+@*<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar toggle-sidebar">
+        <div class="app-sidebar__user">
+            <div class="user-body">
+                <img src="~/admin-side/dashlot-admin/HTML/assets/images/users/user.png" alt="profile-img" class="rounded-circle w-25">
+            </div>
+            <div class="user-info">
+                <a href="#" class="">
+                    <span class="app-sidebar__user-name font-weight-semibold">@User.GetSpecificClaim("UserName")</span><br>
+                    @if (User.GetSpecificClaim("IsActivated") == "True")
+                    {
+                        <span class="badge badge-secondary-light fs-14">Sharer</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-info-light fs-14">Thành Viên</span>
+                    }
+                </a>
+            </div>
+        </div>
+        @await Component.InvokeAsync("SideBar")
+    </aside>*@

@@ -1,0 +1,385 @@
+﻿@model WalletViewModel
+@{
+    ViewData["Title"] = "My Wallet";
+
+}
+@section Scripts{
+    <script src="~/lib/jquery-qrcode-master/src/jquery.qrcode.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-qrcode-master/src/qrcode.js" asp-append-version="true"></script>
+    <script src="~/admin-app/controllers/wallet/index.js" asp-append-version="true"></script>
+    <script>
+        var walletObj = new WalletController();
+        walletObj.initialize();
+    </script>
+}
+
+@section Styles{
+    <link href="~/admin-app/controllers/wallet/index.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="app-content icon-content">
+    <div class="section">
+
+        <!-- Page-header opened -->
+        @await Html.PartialAsync("_PageHeaderPartial")
+        <!-- Page-header closed -->
+        <!--row opened -->
+        <div class="row">
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-secondary">VS TOKEN 1</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletStart)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/vstoken1.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-danger">VÍ GAME</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletGame)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/walletgame.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-info">VÍ WIN</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletWin)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/walletwin.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-secondary">VS TOKEN 2</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletValuesShare)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/vstoken2.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-success">VÍ USDT ERC20</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletUsdt)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="/admin-side/dashlot-admin/HTML/assets/images/svg/walletusdtdeposit.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-dark">VÍ ETH PHÍ </h5>
+                                <h3 class="m-0">@String.Format("{0:N6}", Model.WalletEthereum)</h3>
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/welletethereumdeposit.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h5 class="text-success">USDT ERC20 NẠP</h5>
+                                <h3 class="m-0">@String.Format("{0:N2}", Model.WalletUsdtDeposit)</h3>
+                                @*<h6 class="text-primary mt-1" style="width:220px;">Thông báo: hiện tại giao thức liên kết với ethereum không ổn đinh, Xin vui lòng bỏ qua thông số của mục này.</h6>*@
+                            </div>
+                            <div class="ml-auto">
+                                <img class="w-7 h-7" src="~/admin-side/dashlot-admin/HTML/assets/images/svg/tether.svg" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <div class="card res-tabs responsible-tabs">
+                    <div class="card-header">
+                        <h3 class="card-title">Ví USDT ERC20</h3>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="tab-menu-heading border-top-0 border-left-0 border-right-0 pt-0 pl-0 pr-0">
+                            <div class="tabs-menu1">
+                                <ul class="nav">
+                                    <li class=""><a href="#tab-1" class="active" data-toggle="tab">Nạp USDT ERC20</a></li>
+                                    <li><a href="#tab-2" data-toggle="tab" class="">Rút USDT ERC20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-1">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <label class="mt-3">Địa Chỉ Ví USDT ERC20</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-addon bg-light"><i class="cc ETH-alt fs-21"></i></span>
+                                        <input type="text" class="form-control pt-5 pb-5" value="@Model.PublishKey" id="txtPublishKey">
+                                        <span class="input-group-addon-right bg-light" id="btnCopyPublishKey"><i class="fa fa-clipboard fs-21"></i></span>
+                                    </div>
+                                    <p class="fs-16 mb-1 text-primary mt-5"><strong>Qr Code</strong></p>
+                                    <div class="row">
+                                        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                                            <div style="text-align:center;padding-bottom:20px;" class="qr-code" id="qrcodeCanvas"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-2">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <form style="margin-top: 2rem;">
+
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group">
+                                            <label class="form-control-label">Ví USDT ERC20 Nhận</label>
+                                            <input class="form-control" type="text"
+                                                   value="@Model.AddressReceiving" id="txtAddressReceiving" name="txtAddressReceiving" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số Dư Khả Dụng</label>
+                                            <input class="form-control numberFormat text-primary" type="text"
+                                                   value="@Model.Balance.ToString().Replace(',', '.')" id="txtBalance" disabled name="txtBalance">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số USDT ERC20 Rút</label>
+                                            <input class="form-control numberFormat" type="text"
+                                                   value="0" id="txtAmount" name="txtAmount">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" value="@Model.SystemFee" id="txtSystemFee" name="txtSystemFee" />
+                                            <label class="form-control-label m--font-bold">Phí Rút</label>
+                                            <input class="form-control m-input m-input--air m--font-danger" type="text"
+                                                   value="@Model.SystemFee%" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label m--font-bold">Số USDT ERC20 Nhận</label>
+                                            <input class="form-control m-input m-input--air numberFormat m--font-primary" type="text"
+                                                   value="0" id="txtAmountTransfer" name="txtAmountTransfer" disabled>
+                                        </div>
+                                        <div class="flex mt-4">
+                                            <button id="btnWithdrawUSDT" class="btn btn-success mr-2">Rút USDT ERC20 <i class="fa fa-send"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <div class="card res-tabs responsible-tabs">
+                    <div class="card-header">
+                        <h3 class="card-title">Ví VSCoin</h3>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="tab-menu-heading border-top-0 border-left-0 border-right-0 pt-0 pl-0 pr-0">
+                            <div class="tabs-menu1 tabs-menu1-vscoin">
+                                <ul class="nav">
+                                    <li class=""><a href="#tab-1-vscoin" class="active" data-toggle="tab">Nạp VS Coin</a></li>
+                                    <li><a href="#tab-2-vscoin" class="" data-toggle="tab">Rút VS Coin</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-1-vscoin">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <label class="mt-3">Địa Chỉ Ví VS Coin</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-addon bg-light"><i class="cc ETH-alt fs-21"></i></span>
+                                        <input type="text" class="form-control pt-5 pb-5" value="@Model.PublishKey" id="txtPublishKey1">
+                                        <span class="input-group-addon-right bg-light" id="btnCopyPublishKey1"><i class="fa fa-clipboard fs-21"></i></span>
+                                    </div>
+                                    <p class="fs-16 mb-1 text-primary mt-5"><strong>Qr Code</strong></p>
+                                    <div class="row">
+                                        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                                            <div style="text-align:center;padding-bottom:20px;" class="qr-code" id="qrcodeCanvas1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="tab-2-vscoin">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <form style="margin-top: 1rem;">
+
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group">
+                                            <label class="form-control-label">Ví VS Coin Nhận</label>
+                                            <input class="form-control" type="text" value="@Model.AddressReceiving" id="txtVSCoinAddressReceiving" readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số Dư Khả Dụng</label>
+                                            <input class="form-control numberFormat text-primary" type="text" id="txtVSCoinBalance" value="@Model.WalletValuesShare.ToString().Replace(',', '.')" readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-control-label">Số VS Coin Rút</label>
+                                            <input class="form-control numberFormat" type="text" value="0" id="txtVSCoinAmountTransfer">
+                                        </div>
+                                        <div class="flex mt-4">
+                                            <button id="btnWithdrawVSCoin" class="btn btn-success mr-2">Rút VS Coin <i class="fa fa-send"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <div class="card res-tabs responsible-tabs">
+                    <div class="card-header">
+                        <h3 class="card-title">Ví ETH Phí</h3>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="tab-menu-heading border-top-0 border-left-0 border-right-0 pt-0 pl-0 pr-0">
+                            <div class="tabs-menu1 tabs-menu1-vscoin">
+                                <ul class="nav">
+                                    <li class=""><a href="#tab-1-ethereum" class="active" data-toggle="tab">Nạp ETH phí</a></li>
+                                    <li><a href="#tab-2-ethereum" class="" data-toggle="tab">Cập Nhật Phí</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-1-ethereum">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <label class="mt-3">Địa Chỉ Ví Nạp Ethereum</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-addon bg-light"><i class="cc ETH-alt fs-21"></i></span>
+                                        <input type="text" class="form-control pt-5 pb-5" value="@Model.PublishKeyVT" id="txtPublishKeyVT">
+                                        <span class="input-group-addon-right bg-light" id="btnCopyPublishKeyVT"><i class="fa fa-clipboard fs-21"></i></span>
+                                    </div>
+                                    <p class="fs-16 mb-1 text-primary mt-5"><strong>Qr Code</strong></p>
+                                    <div class="row">
+                                        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                                            <div style="text-align:center;padding-bottom:20px;" class="qr-code" id="qrcodeCanvasVT"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="tab-2-ethereum">
+                                <div class="col-lg-12 col-md-12 p-3">
+                                    <form style="margin-top: 2rem;">
+
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group">
+                                            <label class="form-control-label m--font-bold">Mã Giao Dịch</label>
+                                            <input class="form-control" type="text" id="txtTransactionHash">
+                                        </div>
+
+                                        <div class="flex mt-4">
+                                            <button id="btnUpdateDepositEther" class="btn btn-secondary mr-2">Cập Nhật Ether Phí <i class="fa fa-check"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Chuyển Đổi</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+
+                            @Html.AntiForgeryToken()
+                            <div class="form-group mb-2">
+                                <label class="form-label font-weight-normal fs-14">Ví Chuyển</label>
+                                <select class="form-control nice-select">
+                                    <option>VS TOKEN 1</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <div class="exchange mt-2 mb-2">
+                                    <i class="fa fa-exchange inline-block btn-sm btn-primary-light p-2 pt-0 pb-0 box-shadow-0"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label font-weight-normal fs-14">Ví Nhận</label>
+                                <select class="form-control nice-select">
+                                    <option>VS TOKEN 2</option>
+                                    @*<option>VÍ GAME</option>
+                                        <option>VÍ WIN</option>
+                                        <option>VSTOKEN1</option>*@
+                                </select>
+                            </div>
+                            <button class="btn btn-success btn-block mt-4" type="submit" id="btnExchange">Chuyển Ngay</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+    </div>
+</div>
+
+<style>
+    .numberFormat {
+        font-weight: bold
+    }
+</style>
+
